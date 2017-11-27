@@ -1,6 +1,5 @@
 scriptencoding utf-8
 set encoding=utf-8
-
 """"" Vundle Setup
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -22,7 +21,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
 
 Plugin 'nanotech/jellybeans.vim'
 
@@ -52,14 +50,14 @@ set pastetoggle=<F2>
 set clipboard=unnamed
 
 " Tab/space handling
-set tabstop=8
-set shiftwidth=8
-set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 function TabToggle()
     if &expandtab
-        set tabstop=8
-        set shiftwidth=8
+        set tabstop=4
+        set shiftwidth=4
         set noexpandtab
     else
         set tabstop=4
@@ -89,12 +87,23 @@ set incsearch
 set ignorecase
 set smartcase
 
+" default flag for search/replace
+:set gdefault
+
+" set Perl keywords so that variables are treated as words
+set iskeyword+=$,@-@,%
+
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
-set nobackup
-set nowritebackup
-set noswapfile
+"set nobackup
+"set nowritebackup
+"set noswapfile
 
+" Set the swap file directory
+set directory=$HOME/.vim/swap_files//
+set backupdir=$HOME/.vim/backup_dir//
+
+map <space> \
 " delete buffers with ,d without closing split
 nmap ,d :b#<bar>bd#<CR>
 
@@ -109,7 +118,6 @@ color jellybeans
 
 " ctags stuff
 set tags=.tags;/
-source ~/.vimrc_ctags
 
 " Vim Airline stuff
 set laststatus=2
@@ -121,7 +129,7 @@ let g:airline#extensions#whitespace#enabled = 0
 set updatetime=250
 
 " tagbar
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 " tmux
 let g:tmux_navigator_no_mappings = 1
@@ -137,19 +145,54 @@ let g:ctrlp_working_path_mode = 'ra'
 " vim buffers
 set hidden
 set wildchar=<Tab> wildmenu wildmode=full
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
+" this is already mapped by default
+":nnoremap <Tab> <C-i>
+:nnoremap <S-Tab> <C-o>
 
+" go to next and previous buffers
+nnoremap gn :bn<CR>
+nnoremap gp :bp<CR>
+nnoremap gd :bd<CR>
+
+" YCM shortcuts
+nnoremap <leader>d :YcmCompleter GoTo<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>i :YcmCompleter GetDoc<CR>
+nnoremap <leader>x :YcmCompleter FixIt<CR>
+
+" Make the enter key insert a new line
+map <Enter> ojkd0
+map <leader><Enter> i<CR>jk
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-nnoremap <leader>q :bp<cr>:bd #<cr>
+" quit buffer(window)
+"nnoremap <leader>q :bp<cr>:bd #<cr>
 
+"nnoremap <leader>
 " Break habit of using arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" <Direction> doesn't work in insert mode
+inoremap <ESC>OA <Nop>
+inoremap <ESC>OB <Nop>
+inoremap <ESC>OC <Nop>
+inoremap <ESC>OD <Nop>
+
+vnoremap <down> <Nop>
+vnoremap <left> <Nop>
+vnoremap <right> <Nop>
+vnoremap <up> <Nop>
+
+" use the very magic regex mode by remapping technique
+:nnoremap / /\v
+
+" press jk instead of ESC to exit insert mode
+:inoremap jk <esc>
+:inoremap <esc> <nop>
 
 " tell it to use an undo file
 set undofile
