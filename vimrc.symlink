@@ -21,6 +21,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
 
 Plugin 'nanotech/jellybeans.vim'
 
@@ -42,6 +45,12 @@ filetype plugin indent on    " required
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
+
+" This trigger takes advantage of the fact that the quickfix window can be
+" easily distinguished by its file-type, qf. The wincmd J command is
+" equivalent to the Ctrl+W, Shift+J shortcut telling Vim to move a window to
+" the very bottom (see :help :wincmd and :help ^WJ).
+autocmd FileType qf wincmd J
 
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
@@ -90,6 +99,7 @@ set smartcase
 " default flag for search/replace
 :set gdefault
 
+" TODO maybe set this into a autocmd
 " set Perl keywords so that variables are treated as words
 set iskeyword+=$,@-@,%
 
@@ -103,9 +113,18 @@ set iskeyword+=$,@-@,%
 set directory=$HOME/.vim/swap_files//
 set backupdir=$HOME/.vim/backup_dir//
 
+" Return to the last edit position when opening files
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+let $BASH_ENV = "~/.bash_aliases"
+" make space the leader key
 map <space> \
+
 " delete buffers with ,d without closing split
-nmap ,d :b#<bar>bd#<CR>
+nmap <leader>db :bp<bar>bd#<CR>
 
 " Show trailing whitespace:
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -149,20 +168,16 @@ set wildchar=<Tab> wildmenu wildmode=full
 ":nnoremap <Tab> <C-i>
 :nnoremap <S-Tab> <C-o>
 
-" go to next and previous buffers
-nnoremap gn :bn<CR>
-nnoremap gp :bp<CR>
-nnoremap gd :bd<CR>
+set grepprg=ack
+map <leader>gr :execute "cex system('ackp ".expand("<cword>")." -w -H')"<bar>cw<CR>
+map <leader>gs :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
 
 " YCM shortcuts
-nnoremap <leader>d :YcmCompleter GoTo<CR>
-nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>i :YcmCompleter GetDoc<CR>
-nnoremap <leader>x :YcmCompleter FixIt<CR>
+nnoremap <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>gi :YcmCompleter GetDoc<CR>
+nnoremap <leader>gx :YcmCompleter FixIt<CR>
 
-" Make the enter key insert a new line
-map <Enter> ojkd0
-map <leader><Enter> i<CR>jk
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -197,7 +212,7 @@ vnoremap <up> <Nop>
 " tell it to use an undo file
 set undofile
 " " set a directory to store the undo history
-set undodir=~/.vimundo/
+set undodir=~/.vim/undo/
 
 set backspace=2
 

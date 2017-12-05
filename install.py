@@ -2,6 +2,7 @@
 
 import os
 import sys
+from os.path import expanduser
 
 SUFFIX =       ".symlink"
 DOTFILES_DIR = "dotfiles"
@@ -30,9 +31,12 @@ if __name__ == "__main__":
     dir_list = find_valid_files()
 
     print "Found %d files/directories that can be symlinked" % len(dir_list)
+    print '[%s]' % ', '.join(map(str, dir_list))
 
     for f in dir_list:
         link_name = f[:len(f)-len(SUFFIX)]
         create_symlink(link_name)
 
-    os.system("git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
+    if not os.path.isdir(os.path.join(expanduser("~"), ".vim/bundle/Vundle.vim")):
+        print "cloning Vundle.vim..."
+        os.system("git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
