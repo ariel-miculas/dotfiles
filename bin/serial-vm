@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "CONNECTING TO serial-vm0"
+echo "CTRL-Q to disconnect"
+socat unix-connect:/home/ariel/work/serial-vm stdio,raw,echo=0,escape=0x11,icanon=0
