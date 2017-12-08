@@ -1,0 +1,60 @@
+*ary-help.txt*	For Vim version 8.0	Last change: 2017 December 8
+*ary-help*
+
+VIM CHEATSHEET
+
+===============================================================================
+CONTENTS
+
+	1. Normal Mode.......................................|ary-help-normal|
+	2. Visual Mode.......................................|ary-help-visual|
+	3. Insert Mode.......................................|ary-help-insert|
+	4. Notes.............................................|ary-help-notes|
+	5. Rebuilding this file
+
+===============================================================================
+1. Normal Mode                                         *ary-help-normal*
+
+   - :wall : Save modified buffers
+   - :x : Save buffer only if modified, then exit (better than :wq)
+   - ]] : next '{' which is on the first column (function start)
+   - [[ : previous '{' which is on the first column (function start)
+   - ]m : next method (here by method vim refers to a block of {})
+   - [m : back to the start of the method
+   - CTRL-D : Down half a page
+   - CTRL-U : Up half a page
+   - ~ Uppercase a letter (works on ranges)
+
+   - z commands:
+      - zt: Current line at the top
+      - z. : current line at the center
+      - zb : current line at the bottom
+
+   - :reg : list registers (and show what’s in them)
+
+===============================================================================
+2. Visual Mode                                         *ary-help-visual*
+
+   - J : Join the highlighted lines, removing unnecessary whitespace.
+   - va' : select a single-quoted string (also works with " and `)
+   - vi' : select the contents of a single-quoted string
+   - vab : select a "block" (works differently in different langs)
+   - vat : select a <tag> and its contents (use i instead of a for just
+     contents)
+
+===============================================================================
+3. Insert Mode                                         *ary-help-insert*
+
+   - <C-N>: Complete word
+   - <C-N><C-P>: Complete word (?)
+   - <C-X><C-L>: Complete line (!!)
+
+===============================================================================
+5. Rebuilding this file.
+
+This file is loaded as a plugin. If you ever need to rebuild the tags file, run
+this command: >
+   :helpt /path/to/this/directory
+<
+
+You may need to restart VIM to see the updated version.
