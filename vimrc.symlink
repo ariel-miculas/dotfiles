@@ -56,7 +56,7 @@ autocmd FileType qf wincmd J
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 set pastetoggle=<F2>
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Tab/space handling
 set tabstop=4
@@ -111,13 +111,13 @@ set iskeyword+=$,@-@,%
 
 " Set the swap file directory
 set directory=$HOME/.vim/swap_files//
+" Set the backup dir
 set backupdir=$HOME/.vim/backup_dir//
 
-" Return to the last edit position when opening files
-autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+" tell it to use an undo file
+set undofile
+" set a directory to store the undo history
+set undodir=~/.vim/undo/
 
 let $BASH_ENV = "~/.bash_aliases"
 " make space the leader key
@@ -168,9 +168,18 @@ set wildchar=<Tab> wildmenu wildmode=full
 ":nnoremap <Tab> <C-i>
 :nnoremap <S-Tab> <C-o>
 
+" Return to the last edit position when opening files
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
 set grepprg=ack
 map <leader>gr :execute "cex system('ackp ".expand("<cword>")." -w -H')"<bar>cw<CR>
 map <leader>gs :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
+
+" remap grep back to Ack
+command -nargs=* Ack grep -H <args>
 
 " YCM shortcuts
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
@@ -184,7 +193,6 @@ map <C-n> :NERDTreeToggle<CR>
 " quit buffer(window)
 "nnoremap <leader>q :bp<cr>:bd #<cr>
 
-"nnoremap <leader>
 " Break habit of using arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -209,10 +217,6 @@ vnoremap <up> <Nop>
 :inoremap jk <esc>
 :inoremap <esc> <nop>
 
-" tell it to use an undo file
-set undofile
-" " set a directory to store the undo history
-set undodir=~/.vim/undo/
 
 set backspace=2
 
