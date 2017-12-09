@@ -6,55 +6,217 @@ VIM CHEATSHEET
 ===============================================================================
 CONTENTS
 
-	1. Normal Mode.......................................|ary-help-normal|
-	2. Visual Mode.......................................|ary-help-visual|
-	3. Insert Mode.......................................|ary-help-insert|
-	4. Notes.............................................|ary-help-notes|
-	5. Rebuilding this file
+	0. Intro.........................................|ary-help-intro|
+	1. Normal Mode...................................|ary-help-normal|
+	2. Insert Mode...................................|ary-help-insert|
+	3. Command Mode..................................|ary-help-command|
+	4. Visual Mode...................................|ary-help-visual|
+	5. Visual Block Mode.............................|ary-help-visual-block|
+	6. Marks.........................................|ary-help-marks|
+	7. Registers.....................................|ary-help-registers|
+	8. Macros........................................|ary-help-macros|
+	9. Rebuilding this file
+
+===============================================================================
+0. Intro                                               *ary-help-intro*
+
+Why vim?
+Vim has a steep learning curve, mainly because it is different from any other
+editor. However, once you get the hang of it, it is really easy to use and it
+is a very expressive editor, which means that you will get things done with
+a minimum amount of key presses. You will find that there are multiple ways
+to achieve the same things, hence you will not need to memorize exact commands.
+Lastly, the key presses in vim have a certain logic in which they combine, so
+it is easy to achieve what you want once you are comfortable with a few
+commands.
+
+How to use vim
+It is important to understand the logic behind vim in order to be proficient
+with it. Commands in vim are similar to a language. You can combine movements
+with commands, repetition counts and with registers.
+
+===============================================================================
+Combining actions with motions
+if you learn a movement command, that means that you can perform any action
+on the selection
+
+Actions:
+|y| for yank(copy)
+|p| for put(paste)
+|d| for delete
+|c| for change
+
+with $ you get to the end of line => with d$ you delete the line
+with % you get to the matching bracket => with y% you delete everything up to
+    the matching bracket
+with /pattern<CR> you go to the first occurence of pattern
+    => with c/pattern<CR> you change everything up to the pattern
+
+===============================================================================
+Repetition count
+if you delete a word with dw, you can delete 10 words with 10dw
+you can also use 3dw or d3w to delete 3 words
+if you can move 1 line down with j, you can move 7 lines down with 7j
+if you can insert one * with i*<ESC>, then you can insert 80 stars with
+    80i*<ESC>
+if you can increment a number with <CTRL-A>, you can add 10 to it by using
+    10<CTRL-A>
 
 ===============================================================================
 1. Normal Mode                                         *ary-help-normal*
 
-   - :wall : Save modified buffers
-   - :x : Save buffer only if modified, then exit (better than :wq)
-   - ]] : next '{' which is on the first column (function start)
-   - [[ : previous '{' which is on the first column (function start)
-   - ]m : next method (here by method vim refers to a block of {})
-   - [m : back to the start of the method
-   - CTRL-D : Down half a page
-   - CTRL-U : Up half a page
-   - ~ Uppercase a letter (works on ranges)
+    General commands
+    - |CTRL-D| : Down half a page
+    - |CTRL-U| : Up half a page
+    - |~| Uppercase a letter (|g~|{motion} works on motion)
 
-   - z commands:
-      - zt: Current line at the top
-      - z. : current line at the center
-      - zb : current line at the bottom
+    General motion commands
+    - |j|: go down a line
+    - |k|: go up a line
+    - |h|: go left a character
+    - |l|: go right a character
 
-   - :reg : list registers (and show what’s in them)
+    - |w|: go to next |word|
+    - |W|: go to next |WORD|
+    - |b|: go to previous |word|
+    - |B|: go to previous |WORD|
+    - |e|: go to the end of the |word|
+    - |E|: go to the end of the |WORD|
+    - |0|: go to the first character in the line
+    - |^: |go to the first non-blank character in the line
+    - |_|: go to the first non-blank character in the line
+
+    - |f|{character}: go to the next occurence of character in the current
+                        line
+    - |F|{character}: go to the previous occurence of character in the
+                        current line
+    - |t|{character}: (until the {character}) same as |f|{character}h
+    - |T|{character}: (until the {character}) same as |F|{character}l
+
+    Mark motions
+    see |ary-help-marks|
 
 ===============================================================================
-2. Visual Mode                                         *ary-help-visual*
+    |z| commands
+    - |zt|: Current line at the top
+    - |zz|: current line at the center
+    - |zb|: current line at the bottom
 
-   - J : Join the highlighted lines, removing unnecessary whitespace.
-   - va' : select a single-quoted string (also works with " and `)
-   - vi' : select the contents of a single-quoted string
-   - vab : select a "block" (works differently in different langs)
-   - vat : select a <tag> and its contents (use i instead of a for just
+    |g| commands
+    - |g_|: go to the end of the line just before the newline
+    - |ga|: show the ASCII value of the current character
+    - |gg|: go to the first line
+    - |G|:  go to the next line
+    - {number}gg: go to line {number}
+    - {number}G:  go to line {number} (same as the above)
+    - |g~|{motion}: toggle case for selection
+    - |gu|{motion}: lower case for selection
+    - |gU|{motion}: upper case for selection
+
+    Code navigation
+    - |]]| : next '{' which is on the first column (function start)
+    - |[[| : previous '{' which is on the first column (function start)
+    - |]m| : next method (here by method vim refers to a block of {})
+    - |[m| : back to the start of the method
+
+    - [{ : go to the start of the block
+    - ]} : go to the end of the block
+    - [( : go to the start of the parantheses
+    - ]) : go to the end of the parantheses
+
+===============================================================================
+2. Insert Mode                                         *ary-help-insert*
+
+    - <C-N>: Complete word
+    - <C-N><C-P>: Complete word (?)
+    - <C-X><C-L>: Complete line (!!)
+
+===============================================================================
+3. Command Mode                                        *ary-help-command*
+
+    - :wall : Save modified buffers
+    - :x : Save buffer only if modified, then exit (better than :wq)
+    - :r file : put the contents of the file at the current line
+    - :r !command : put the output of the command at the current line
+    - :grep :execute grep command (useful because it populates the
+            quickfix list so you can navigate through the search list)
+
+    Vim lists
+    - :changes : see the changelist
+    - :jumps : see the jumplist
+    - :buffers : see the buffer list
+    - :cwindow : see the quickfix list
+    - :lwindow : see the local quickfix list
+
+    The power of G
+    - :g/re/p : print all the lines matching re
+    - :g/re   : shorthand of the above
+    - :g/^/m0 : reverse the lines in the file
+    - :g/re/m$ : move all the lines matching re to the end of the file
+    - :g/re/t5 : copy all the lines matching re to line 5
+
+===============================================================================
+4. Visual Mode                                         *ary-help-visual*
+
+    - J : Join the highlighted lines, removing unnecessary whitespace.
+    - va' : select a single-quoted string (also works with " and `)
+    - vi' : select the contents of a single-quoted string
+    - vab : select a "block" (works differently in different langs)
+    - vat : select a <tag> and its contents (use i instead of a for just
      contents)
 
 ===============================================================================
-3. Insert Mode                                         *ary-help-insert*
+5. Visual Block Mode                                   *ary-help-visual-block*
 
-   - <C-N>: Complete word
-   - <C-N><C-P>: Complete word (?)
-   - <C-X><C-L>: Complete line (!!)
+    - <C-V>: enter visual block mode
 
 ===============================================================================
-5. Rebuilding this file.
+6. Marks                                               *ary-help-marks*
+
+    - m{letter}: set mark at cursor position
+
+    - |'|{letter}: go to the line where mark {letter} is set
+    - |`|{letter}: go to the exact position of the mark {letter}
+
+    - |'|0: go to the last modified file
+    - |'|.: go to the last change in the current buffer
+
+===============================================================================
+7. Registers                                           *ary-help-registers*
+
+    - :|registers| : list the contents of the registers
+    - "{lc_letter}y{motion}: yank text into register {lc_letter}
+    - "{UC_LETTER}y{motion}: append the text into register {UC_LETTER}
+    - "{lc_letter}p: put the text from the register {lc_letter}
+
+    - <C-R>{register}:  put the content of the {register}
+                        (for insert mode and command more)
+    - <C-R><C-R>{register}:  put the content of the {register}, including
+                        special characters (useful for macros)
+                        (for insert mode and command more)
+
+===============================================================================
+8. Macros                                              *ary-help-macros*
+
+Macros are a sequence of commands that are saved in a register and then
+they can be executed multiple times.
+    - q{letter}: begin macro recording in register {letter}
+    - sequence of commands that will be recorded
+    - q: stop macro recoring
+
+    - @{letter}: replay macro
+    - @@: replay last macro
+
+    - "{letter}p: paste the contents of a macro (macro is saved in register)
+    - i<C-R><C-R>{letter}: paste the literal content of a macro
+    - 0"{letter}yg_: copy the content of the current line in register {letter}
+
+===============================================================================
+9. Rebuilding this file.
 
 This file is loaded as a plugin. If you ever need to rebuild the tags file, run
 this command: >
-   :helpt /path/to/this/directory
+    :helpt /path/to/this/directory
 <
 
 You may need to restart VIM to see the updated version.
