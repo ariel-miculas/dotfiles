@@ -12,20 +12,19 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-
-Plugin 'nanotech/jellybeans.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,19 +61,6 @@ set clipboard=unnamedplus
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-function TabToggle()
-    if &expandtab
-        set tabstop=4
-        set shiftwidth=4
-        set noexpandtab
-    else
-        set tabstop=4
-        set shiftwidth=4
-        set expandtab
-    endif
-endfunction
-nmap <F9> :execute TabToggle()<CR>
 
 set cindent
 set cinoptions+=g0
@@ -162,6 +148,9 @@ let g:ctrlp_working_path_mode = 'ra'
 set hidden
 set wildchar=<Tab> wildmenu wildmode=full
 
+" set encryption to the strongest method
+set cm=blowfish2
+
 " this is already mapped by default
 ":nnoremap <Tab> <C-i>
 nnoremap <S-Tab> <C-o>
@@ -219,6 +208,12 @@ vnoremap <down> <Nop>
 vnoremap <left> <Nop>
 vnoremap <right> <Nop>
 vnoremap <up> <Nop>
+
+" make typos work
+command WQ wq
+command Wq wq
+command W w
+command Q q
 
 " use the very magic regex mode by remapping technique
 :nnoremap / /\v
