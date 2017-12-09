@@ -305,7 +305,7 @@ modifier = a | i
 object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
 
 ===============================================================================
-2. Normal Mode                                         *ary-help-normal*
+3. Normal Mode                                         *ary-help-normal*
 
     General commands
     - |CTRL-D| : Down half a page
@@ -368,7 +368,7 @@ object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
     - ]) : go to the end of the parantheses
 
 ===============================================================================
-3. Insert Mode                                         *ary-help-insert*
+4. Insert Mode                                         *ary-help-insert*
 
     - <C-N>: Next autocomplete suggestion
     - <C-P>: Previouse autocomplete suggestion
@@ -380,7 +380,7 @@ object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
     - <C-V>{character}: insert special charater (like <C-R>, <ESC> etc.)
 
 ===============================================================================
-4. Command Mode                                        *ary-help-command*
+5. Command Mode                                        *ary-help-command*
 
     - :wall : Save modified buffers
     - :x : Save buffer only if modified, then exit (better than :wq)
@@ -404,7 +404,7 @@ object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
     - :g/re/t5 : copy all the lines matching re to line 5
 
 ===============================================================================
-5. Visual Mode                                         *ary-help-visual*
+6. Visual Mode                                         *ary-help-visual*
 
     - J : Join the highlighted lines, removing unnecessary whitespace.
     - va' : select a single-quoted string (also works with " and `)
@@ -414,12 +414,12 @@ object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
      contents)
 
 ===============================================================================
-6. Visual Block Mode                                   *ary-help-visual-block*
+7. Visual Block Mode                                   *ary-help-visual-block*
 
     - <C-V>: enter visual block mode
 
 ===============================================================================
-7. Marks                                               *ary-help-marks*
+8. Marks                                               *ary-help-marks*
 
     - m{letter}: set mark at cursor position
 
@@ -430,7 +430,7 @@ object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
     - |'|.: go to the last change in the current buffer
 
 ===============================================================================
-8. Registers                                           *ary-help-registers*
+9. Registers                                           *ary-help-registers*
 
     - :|registers| : list the contents of the registers
     - "{lc_letter}y{motion}: yank text into register {lc_letter}
@@ -444,7 +444,7 @@ object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
                         (for insert mode and command more)
 
 ===============================================================================
-9. Macros                                              *ary-help-macros*
+10. Macros                                              *ary-help-macros*
 
 Macros are a sequence of commands that are saved in a register and then
 they can be executed multiple times.
@@ -460,7 +460,7 @@ they can be executed multiple times.
     - 0"{letter}yg_: copy the content of the current line in register {letter}
 
 ===============================================================================
-10. Rebuilding this file.
+11. Rebuilding this file.
 
 This file is loaded as a plugin. If you ever need to rebuild the tags file, run
 this command: >

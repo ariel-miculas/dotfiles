@@ -1,5 +1,6 @@
 ary-help	myhelp.txt	/*ary-help*
 ary-help-command	myhelp.txt	/*ary-help-command*
+ary-help-grok-vim	myhelp.txt	/*ary-help-grok-vim*
 ary-help-insert	myhelp.txt	/*ary-help-insert*
 ary-help-intro	myhelp.txt	/*ary-help-intro*
 ary-help-macros	myhelp.txt	/*ary-help-macros*
