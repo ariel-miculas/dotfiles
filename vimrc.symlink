@@ -123,9 +123,6 @@ let $BASH_ENV = "~/.bash_aliases"
 " make space the leader key
 map <space> \
 
-" delete buffers with ,d without closing split
-nmap <leader>db :bp<bar>bd#<CR>
-
 " Show trailing whitespace:
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -164,9 +161,13 @@ let g:ctrlp_working_path_mode = 'ra'
 " vim buffers
 set hidden
 set wildchar=<Tab> wildmenu wildmode=full
+
 " this is already mapped by default
 ":nnoremap <Tab> <C-i>
-:nnoremap <S-Tab> <C-o>
+nnoremap <S-Tab> <C-o>
+
+" Make Y command logical
+nnoremap Y y$
 
 " Return to the last edit position when opening files
 autocmd BufReadPost *
@@ -181,17 +182,26 @@ map <leader>gs :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar
 " remap grep back to Ack
 command -nargs=* Ack grep -H <args>
 
+let @f='"ayiwk"byiwjo=a+bjk'
+
 " YCM shortcuts
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <leader>gt :YcmCompleter GetType<CR>
 nnoremap <leader>gi :YcmCompleter GetDoc<CR>
 nnoremap <leader>gx :YcmCompleter FixIt<CR>
 
+" YCM stuff
+highlight Pmenu ctermfg=15 ctermbg=0
+let g:ycm_extra_conf_globlist = ['~/work/*', ]
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " quit buffer(window)
-"nnoremap <leader>q :bp<cr>:bd #<cr>
+nnoremap <leader>q :bp<bar>bd#<CR>
 
 " Break habit of using arrow keys
 noremap <Up> <NOP>
@@ -217,15 +227,7 @@ vnoremap <up> <Nop>
 :inoremap jk <esc>
 :inoremap <esc> <nop>
 
-
 set backspace=2
-
-" YCM stuff
-highlight Pmenu ctermfg=15 ctermbg=0
-let g:ycm_extra_conf_globlist = ['~/work/*', ]
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " (Hopefully) removes the delay when hitting esc in insert mode
 set noesckeys
