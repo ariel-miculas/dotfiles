@@ -12,7 +12,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'nanotech/jellybeans.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
@@ -41,6 +41,9 @@ call vundle#end()            " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 filetype plugin indent on
+
+" Disable automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " This trigger takes advantage of the fact that the quickfix window can be
 " easily distinguished by its file-type, qf. The wincmd J command is
@@ -113,7 +116,8 @@ match ExtraWhitespace /\s\+$/
 
 " Colour Scheme
 set t_Co=256
-color jellybeans
+colorscheme gruvbox
+set background=dark
 
 " ctags stuff
 set tags=.tags;/
@@ -126,6 +130,9 @@ let g:airline#extensions#whitespace#enabled = 0
 
 " vim-gitgutter
 set updatetime=250
+
+" fugitive
+set diffopt+=vertical
 
 " tagbar
 nnoremap <silent> <leader>b :TagbarToggle<CR>
@@ -163,11 +170,11 @@ autocmd BufReadPost *
 
 set grepprg=ack
 " execute project specific search defined by the ackp alias (quickfix list)
-map <leader>gr :execute "cex system('ackp ".expand("<cword>")." -w -H')"<bar>cw<CR>
+map <leader>sr :execute "cex system('ackp ".expand("<cword>")." -w -H')"<bar>cw<CR>
 " execute a search in the current directory (quickfix list)
-map <leader>gs :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
+map <leader>sd :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
 " execute a search in the current file (location list)
-map <leader>gf :execute "lex system('ack --cc -w -H ".expand("<cword>")." ".expand("%")."')"<bar>lw<CR>
+map <leader>sf :execute "lex system('ack --cc -w -H ".expand("<cword>")." ".expand("%")."')"<bar>lw<CR>
 
 " remap grep back to Ack
 command -nargs=* Ack grep -H <args>
@@ -234,8 +241,10 @@ command Q q
 :nnoremap / /\v
 
 " press jk instead of ESC to exit insert mode
-:inoremap jk <esc>
-:inoremap <esc> <nop>
+inoremap jk <esc>
+inoremap <esc> <nop>
+vnoremap jk <esc>
+vnoremap <esc> <nop>
 
 set backspace=2
 
