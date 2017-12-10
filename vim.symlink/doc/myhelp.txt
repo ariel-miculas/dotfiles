@@ -297,12 +297,14 @@ will.
 ===============================================================================
 2. Vim's Grammar
 
-rule #1 = motion
-rule #2 = operator ( motion | text - obj )
-operator = c | d | y | g~ | gu | gU | < | > | =
-text-obj = modifier object
-modifier = a | i
-object = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
+rule #1     = motion
+rule #2     = operator ( motion | text-obj )
+rule #3     = |visual-mode| (|motion| | text-obj)* (|operator| | :ex-command)
+|operator|  = c | d | y | g~ | gu | gU | < | > | =
+text-obj    = modifier object
+modifier    = a | i
+object      = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
+visual-mode = v | V
 
 ===============================================================================
 3. Normal Mode                                         *ary-help-normal*
