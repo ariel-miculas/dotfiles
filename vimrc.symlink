@@ -173,9 +173,20 @@ map <leader>gf :execute "lex system('ack --cc -w -H ".expand("<cword>")." ".expa
 command -nargs=* Ack grep -H <args>
 command -nargs=* LAck lgrep -H <args>
 
+" generate the next fibonacci element from the previous 2 lines
 let @f='"ayiwk"byiwjo=a+bjk'
 
-nnoremap <leader>t :Tabularize /
+" Tabularize shortcuts
+" lowercase t for aligning only at the first occurence
+" UPPERCASE T for aligning at all the occurences
+nnoremap <leader>t, :Tabularize /^[^,]*,\zs<CR>
+nnoremap <leader>T, :Tabularize /,\zs<CR>
+
+nnoremap <leader>t: :Tabularize /^[^:]*:\zs<CR>
+nnoremap <leader>T: :Tabularize /:\zs<CR>
+
+nnoremap <leader>t= :Tabularize /^[^=]*\zs=<CR>
+nnoremap <leader>T= :Tabularize /=<CR>
 
 " YCM shortcuts
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
