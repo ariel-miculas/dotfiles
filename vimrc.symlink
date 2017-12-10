@@ -19,7 +19,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
@@ -28,7 +29,6 @@ Plugin 'tpope/vim-repeat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -40,10 +40,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+filetype plugin indent on
 
 " This trigger takes advantage of the fact that the quickfix window can be
 " easily distinguished by its file-type, qf. The wincmd J command is
@@ -165,13 +162,20 @@ autocmd BufReadPost *
     \ endif
 
 set grepprg=ack
+" execute project specific search defined by the ackp alias (quickfix list)
 map <leader>gr :execute "cex system('ackp ".expand("<cword>")." -w -H')"<bar>cw<CR>
+" execute a search in the current directory (quickfix list)
 map <leader>gs :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
+" execute a search in the current file (location list)
+map <leader>gf :execute "lex system('ack --cc -w -H ".expand("<cword>")." ".expand("%")."')"<bar>lw<CR>
 
 " remap grep back to Ack
 command -nargs=* Ack grep -H <args>
+command -nargs=* LAck lgrep -H <args>
 
 let @f='"ayiwk"byiwjo=a+bjk'
+
+nnoremap <leader>t :Tabularize /
 
 " YCM shortcuts
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
