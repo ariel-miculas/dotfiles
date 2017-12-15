@@ -7,16 +7,17 @@ VIM CHEATSHEET
 CONTENTS
 
 	0. Intro.........................................|ary-help-intro|
-	1  Grok VIM......................................|ary-help-grok-vim|
-	2. Normal Mode...................................|ary-help-normal|
-	3. Insert Mode...................................|ary-help-insert|
-	4. Command Mode..................................|ary-help-command|
-	5. Visual Mode...................................|ary-help-visual|
-	6. Visual Block Mode.............................|ary-help-visual-block|
-	7. Marks.........................................|ary-help-marks|
-	8. Registers.....................................|ary-help-registers|
-	9. Macros........................................|ary-help-macros|
-	10. Rebuilding this file
+	1. Grok VIM......................................|ary-help-grok-vim|
+	2. Vim's Grammar.................................|ary-help-grammar|
+	3. Normal Mode...................................|ary-help-normal|
+	4. Insert Mode...................................|ary-help-insert|
+	5. Command Mode..................................|ary-help-command|
+	6. Visual Mode...................................|ary-help-visual|
+	7. Visual Block Mode.............................|ary-help-visual-block|
+	8. Marks.........................................|ary-help-marks|
+	9. Registers.....................................|ary-help-registers|
+	10. Macros.......................................|ary-help-macros|
+	11. Rebuilding this file.........................|ary-help-rebuild|
 
 ===============================================================================
 0. Intro                                               *ary-help-intro*
@@ -295,24 +296,31 @@ There are people who have used considerably more of vi's power than I ever
 will.
 
 ===============================================================================
-2. Vim's Grammar
+2. Vim's Grammar                                       *ary-help-grammar*
 
 rule #1     = motion
-rule #2     = operator ( motion | text-obj )
+rule #2     = |operator| ( |motion| | text-obj )
 rule #3     = |visual-mode| (|motion| | text-obj)* (|operator| | :ex-command)
-|operator|  = c | d | y | g~ | gu | gU | < | > | =
+rule #4     = operator{2} #apply operator linewise
+operator    = repetition? (c | d | y | g~ | gu | gU | gq | < | > | = | !)
+motion      = repetition? ( h | l | j | k | gg | G | ... )
 text-obj    = modifier object
 modifier    = a | i
 object      = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
 visual-mode = v | V
+repetition  = 1..9 { 0..9 } #number
 
 ===============================================================================
 3. Normal Mode                                         *ary-help-normal*
 
-    General commands
-    - |CTRL-D| : Down half a page
-    - |CTRL-U| : Up half a page
+    Simple changes
     - |~| Uppercase a letter (|g~|{motion} works on motion)
+    - |C|: change from the current pos to the end of the line
+    - |D|: delete from the current pos to the end of the line
+    - |Y|: yank the current line (remap it to y$ to get the logical effect)
+    - |s|: delete the current character and go into insert mode
+    - |S|: delete the entire line and enter insert mode
+    - |r|: replace a character
 
     General motion commands
     - |j|: go down a line
@@ -337,6 +345,10 @@ visual-mode = v | V
     - |t|{character}: (until the {character}) same as |f|{character}h
     - |T|{character}: (until the {character}) same as |F|{character}l
 
+    Navigation commands
+    - |CTRL-D| : Down half a page
+    - |CTRL-U| : Up half a page
+
     Mark motions
     see |ary-help-marks|
 
@@ -347,27 +359,28 @@ visual-mode = v | V
     - |zb|: current line at the bottom
 
     |g| commands
-    - |g_|: go to the end of the line just before the newline
-    - |ga|: show the ASCII value of the current character
-    - |gg|: go to the first line
-    - |G|:  go to the next line
-    - {number}gg: go to line {number}
-    - {number}G:  go to line {number} (same as the above)
-    - |g~|{motion}: toggle case for selection
-    - |gu|{motion}: lower case for selection
-    - |gU|{motion}: upper case for selection
-    - |gf|: open file under cursor
+    - |g_|:          go to the last nonblank character in this line
+    - |ga|:          show the ASCII value of the current character
+    - |gg|:          go to the first line
+    - |G|:           go to the last line
+    - {number}gg:    go to line {number}
+    - {number}G:     go to line {number} (same as the above)
+    - {number}|:     got to column {number}
+    - |g~|{motion}:  toggle case for selection
+    - |gu|{motion}:  lower case for selection
+    - |gU|{motion}:  upper case for selection
+    - |gf|:          open file under cursor
 
     Code navigation
-    - |]]| : next '{' which is on the first column (function start)
-    - |[[| : previous '{' which is on the first column (function start)
-    - |]m| : next method (here by method vim refers to a block of {})
-    - |[m| : back to the start of the method
+    - |]]|: next '{' which is on the first column (function start)
+    - |[[|: previous '{' which is on the first column (function start)
+    - |]m|: next method (here by method vim refers to a block of {})
+    - |[m|: back to the start of the method
 
-    - [{ : go to the start of the block
-    - ]} : go to the end of the block
-    - [( : go to the start of the parantheses
-    - ]) : go to the end of the parantheses
+    - |[{|: go to the start of the block
+    - |]}|: go to the end of the block
+    - |[(|: go to the start of the parantheses
+    - |])|: go to the end of the parantheses
 
 ===============================================================================
 4. Insert Mode                                         *ary-help-insert*
@@ -446,7 +459,7 @@ visual-mode = v | V
                         (for insert mode and command more)
 
 ===============================================================================
-10. Macros                                              *ary-help-macros*
+10. Macros                                             *ary-help-macros*
 
 Macros are a sequence of commands that are saved in a register and then
 they can be executed multiple times.
@@ -462,7 +475,7 @@ they can be executed multiple times.
     - 0"{letter}yg_: copy the content of the current line in register {letter}
 
 ===============================================================================
-11. Rebuilding this file.
+11. Rebuilding this file...............................*ary-help-rebuild*
 
 This file is loaded as a plugin. If you ever need to rebuild the tags file, run
 this command: >
