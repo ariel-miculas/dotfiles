@@ -299,16 +299,20 @@ will.
 2. Vim's Grammar                                       *ary-help-grammar*
 
 rule #1     = motion
-rule #2     = |operator| ( |motion| | text-obj )
-rule #3     = |visual-mode| (|motion| | text-obj)* (|operator| | :ex-command)
-rule #4     = operator{2} #apply operator linewise
-operator    = repetition? (c | d | y | g~ | gu | gU | gq | < | > | = | !)
-motion      = repetition? ( h | l | j | k | gg | G | ... )
+rule #2     = command (|motion| | text-obj)
+rule #3     = register? count? operator{2}          #apply operator linewise
+rule #4     = |visual-mode| (|motion| | text-obj)* (v-command)
+motion      = count? ( h | l | j | k | gg | G | ... )
+command     = register? count? operator
+operator    = (c | d | y | g~ | gu | gU | gq | < | > | = | ! | zf | g?)
+register    = "[a-zA-Z0-9%#/.:+*]                   #see :reg
+count       = [1-9][0..9]*                          #number
 text-obj    = modifier object
 modifier    = a | i
 object      = w | W | s | p | [ | ] | { | } | ( | ) | " | ' | ` | < | >
 visual-mode = v | V
-repetition  = 1..9 { 0..9 } #number
+v-command   = (register? v-operator) | (:ex-command)
+v-operator  = (c | d | y | ~ | u | U | J | gq | < | > | = | ! | g? | ...)
 
 ===============================================================================
 3. Normal Mode                                         *ary-help-normal*
