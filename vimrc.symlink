@@ -21,7 +21,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
@@ -147,19 +147,14 @@ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_c_checkers = ['cppcheck']
+" ALE
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " configure the foldmethod
 set foldmethod=syntax
+
 " ensure that the files open without any folds
 set foldlevelstart=99
 
@@ -257,13 +252,11 @@ command W w
 command Q q
 
 " use the very magic regex mode by remapping technique
-:nnoremap / /\v
+nnoremap / /\v
 
 " press jk instead of ESC to exit insert mode
 inoremap jk <esc>
 inoremap <esc> <nop>
-vnoremap jk <esc>
-vnoremap <esc> <nop>
 
 set backspace=2
 
