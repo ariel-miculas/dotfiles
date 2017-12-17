@@ -28,5 +28,11 @@ install/build-vim.sh
 # install ack
 cpan install App::Ack
 
+# install ycm plugin(has external dependencies)
+./install/install_ycm.sh
+
+# install cppcheck (needed for the syntastic plugin)
+sudo apt-get install cppcheck
+
 #forget all the hashed paths
 hash -r
