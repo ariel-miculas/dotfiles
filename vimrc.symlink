@@ -191,14 +191,17 @@ map <leader>sr :execute "cex system('ackp ".expand("<cword>")." -w -H')"<bar>cw<
 " execute a search in the current directory (quickfix list)
 map <leader>sd :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
 " execute a search in the current file (location list)
-map <leader>sf :execute "lex system('ack --cc -w -H ".expand("<cword>")." ".expand("%")."')"<bar>lw<CR>
+map <leader>sf :execute "cex system('ack --cc -w -H ".expand("<cword>")." ".expand("%")."')"<bar>cw<CR>
 
 " remap grep back to Ack
 command! -nargs=* Ack grep -H <args>
 command! -nargs=* LAck lgrep -H <args>
 
 " generate the next fibonacci element from the previous 2 lines
-let @f='"ayiwk"byiwjo=a+bjk'
+let @f='"ayiwk"byiwjo=a+b<ESC>'
+
+" map shortcut for make
+nnoremap <leader>m :update<bar>make<cr>
 
 " Tabularize shortcuts
 " lowercase t for aligning only at the first occurence
