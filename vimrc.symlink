@@ -191,8 +191,8 @@ map <leader>sd :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar
 map <leader>sf :execute "lex system('ack --cc -w -H ".expand("<cword>")." ".expand("%")."')"<bar>lw<CR>
 
 " remap grep back to Ack
-command -nargs=* Ack grep -H <args>
-command -nargs=* LAck lgrep -H <args>
+command! -nargs=* Ack grep -H <args>
+command! -nargs=* LAck lgrep -H <args>
 
 " generate the next fibonacci element from the previous 2 lines
 let @f='"ayiwk"byiwjo=a+bjk'
@@ -246,10 +246,10 @@ vnoremap <right> <Nop>
 vnoremap <up> <Nop>
 
 " make typos work
-command WQ wq
-command Wq wq
-command W w
-command Q q
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
 
 " use the very magic regex mode by remapping technique
 nnoremap / /\v
