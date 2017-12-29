@@ -44,6 +44,9 @@ call vundle#end()            " required
 " Put your non-Plugin stuff after this line
 filetype plugin indent on
 
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
 " Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
