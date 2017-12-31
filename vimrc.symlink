@@ -187,7 +187,7 @@ command! -nargs=* Ack grep -H <args>
 command! -nargs=* LAck lgrep -H <args>
 
 " generate the next fibonacci element from the previous 2 lines
-let @f='"ayiwk"byiwjo=a+b<ESC>'
+let @f='"ayiwk"byiwjo=a+bjk'
 
 " map shortcut for make
 nnoremap <leader>m :update<bar>make<cr>
