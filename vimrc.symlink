@@ -80,6 +80,11 @@ function! TabToggle()
 endfunction
 
 nmap <F9> :execute TabToggle()<CR>
+
+" mappings to replace tabs with spaces and viceversa
+nnoremap <leader>et :execute "%!unexpand -t".&tabstop<ESC>
+nnoremap <leader>es :execute "%!expand -t".&tabstop<ESC>
+
 set cindent
 set cinoptions+=g0
 
