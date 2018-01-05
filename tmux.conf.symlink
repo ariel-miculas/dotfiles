@@ -10,16 +10,13 @@ bind -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 set -g default-terminal "screen-256color"
 
 set -g mouse on
-#set -g mouse-resize-pane on
-#set -g mouse-select-pane on
-#set -g mouse-select-window on
 
 bind -n S-Right next-window
 bind -n S-Left previous-window
 
 # Binding to reload config file, useful for tweaking tmux
 bind R source ~/.tmux.conf \; display-message "Conf reloaded..."
- 
+
 # Visual alert to activity in other pane
 set -g visual-activity on
 setw -g monitor-activity on
