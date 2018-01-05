@@ -69,7 +69,7 @@ set clipboard=unnamedplus
 " Tab/space handling
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
 
 set cindent
 set cinoptions+=g0
