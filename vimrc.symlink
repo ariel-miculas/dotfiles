@@ -71,6 +71,15 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 
+function! TabToggle()
+    if &expandtab
+        set noexpandtab
+    else
+        set expandtab
+    endif
+endfunction
+
+nmap <F9> :execute TabToggle()<CR>
 set cindent
 set cinoptions+=g0
 
