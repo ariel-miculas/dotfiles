@@ -57,7 +57,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType qf wincmd J
 
 " useful macros for the C language
-autocmd FileType c let @i='I#include<jkA>jkj'
+autocmd FileType c let @i='I#include <jkA>jkj'
 autocmd FileType c let @l='Iprintf("f,\n"A);jk==0t,F\i '
 
 " Better copy & paste
