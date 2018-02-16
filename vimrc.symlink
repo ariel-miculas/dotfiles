@@ -22,6 +22,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'godlygeek/tabular'
 Plugin 'w0rp/ale'
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
