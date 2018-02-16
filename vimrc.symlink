@@ -62,6 +62,7 @@ autocmd FileType qf wincmd J
 autocmd FileType c let @i='I#include <jkA>jkj'
 autocmd FileType c let @l='Iprintf("f,\n"A);jk==0t,F\i '
 
+autocmd FileType asm setlocal commentstring=;\ %s
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
@@ -224,6 +225,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
 \   'perl': ['perl'],
+\   'asm': [],
 \}
 
 " Tabularize shortcuts
@@ -237,6 +239,10 @@ nnoremap <leader>T: :Tabularize /:\zs<CR>
 
 nnoremap <leader>t= :Tabularize /^[^=]*\zs=<CR>
 nnoremap <leader>T= :Tabularize /=<CR>
+
+" for assembly alignment
+nnoremap <leader>t<space> :Tabularize /\v^\s+\S+\zs/l0l4<CR>
+nnoremap <leader>T<space> :Tabularize /\v\s+\S+\zs/l0l4<CR>
 
 " YCM shortcuts
 nnoremap <leader>gd :YcmCompleter GoTo<CR>
