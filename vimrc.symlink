@@ -291,7 +291,9 @@ nnoremap / /\v
 
 " press jk instead of ESC to exit insert mode
 inoremap jk <esc>
-inoremap <esc> <nop>
+
+" remap capslock key to escape in xubuntu (add it in 'session and startup', 'application autostart')
+" xmodmap -e "clear Lock" -e "keysym Caps_Lock = Escape"
 
 set backspace=2
 
