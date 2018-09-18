@@ -115,6 +115,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+cd() {
+    eval $(smart_cd $1)
+}
 PATH="$PATH:/home/ariel/bin/"
 export PERL5LIB=/home/ariel/work/scripts/perl_lib
 export PERLDOC_PAGER='less -r'
+. /usr/share/autojump/autojump.sh
+. ~/work/z/z.sh
+eval $(thefuck --alias)
