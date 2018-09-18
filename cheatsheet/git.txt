@@ -1,0 +1,18 @@
+To list untracked files try:
+git ls-files --others --exclude-standard
+
+Nice alias for adding untracked files:
+au = !git add $(git ls-files -o --exclude-standard)
+
+Print git root
+git rev-parse --show-toplevel
+
+Check if pull needed
+git remote update
+git status -uno
+
+See what files have been changed
+git diff --name-only
+
+See what files have been changed in a commit
+git diff-tree --no-commit-id --name-only -r bd61ad98
