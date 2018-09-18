@@ -63,6 +63,9 @@ autocmd FileType c let @i='I#include <jkA>jkj'
 autocmd FileType c let @l='Iprintf("f,\n"A);jk==0t,F\i '
 
 autocmd FileType asm setlocal commentstring=;\ %s
+
+autocmd FileType tex,plaintex set fo+=tc textwidth=120
+
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
@@ -141,6 +144,8 @@ match ExtraWhitespace /\s\+$/
 
 " Colour Scheme
 set t_Co=256
+" fix spellchecking for the gruvbox colorscheme
+let g:gruvbox_guisp_fallback = "bg"
 colorscheme gruvbox
 set background=dark
 
