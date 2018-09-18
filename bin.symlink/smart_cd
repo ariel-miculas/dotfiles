@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $dir = $ARGV[0]//"";
+my @commands;
+if ($dir =~ m{work/wrt})
+{
+	push @commands, "git status";
+}
+if (-f $dir)
+{
+	$dir =~ s{/[^/]++$}{};
+}
+push @commands, "builtin cd $dir";
+print join "&&", @commands;
