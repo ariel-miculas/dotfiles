@@ -20,7 +20,7 @@ cd vim
             --enable-gui=gnome2 \
             --enable-cscope \
             --prefix=/usr/local
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim81
 sudo make install
 # make vim the default editor and map vi to vim
 sudo update-alternatives --install  /usr/bin/editor editor /usr/local/bin/vim 1
