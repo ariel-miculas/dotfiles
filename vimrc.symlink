@@ -180,8 +180,6 @@ autocmd BufReadPost *
     \ endif
 
 set grepprg=ack
-" execute project specific search defined by the ackp alias (quickfix list)
-map <leader>sr :execute "cex system('ackp ".expand("<cword>")." -w -H')"<bar>cw<CR>
 " execute a search in the current directory (quickfix list)
 map <leader>sd :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
 " execute a search in the current file (location list)
