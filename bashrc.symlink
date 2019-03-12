@@ -126,3 +126,6 @@ export PERLDOC_PAGER='less -r'
 . /usr/share/autojump/autojump.sh
 . ~/work/z/z.sh
 eval $(thefuck --alias)
+
+# show the git branch in the status line
+export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[33;1m\]\n\$(__git_ps1 '[%s]')\[\033[00m\]\$ "
