@@ -306,4 +306,3 @@ set ttimeoutlen=1
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
-highlight SpecialKey ctermbg=16 ctermfg=235
