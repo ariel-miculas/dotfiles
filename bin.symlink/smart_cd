@@ -4,10 +4,6 @@ use warnings;
 
 my $dir = $ARGV[0]//"";
 my @commands;
-if ($dir =~ m{work/wrt})
-{
-	push @commands, "git status";
-}
 if (-f $dir)
 {
 	$dir =~ s{/[^/]++$}{};
