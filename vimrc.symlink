@@ -179,11 +179,12 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-set grepprg=ack
+set grepprg=ag\ --vimgrep\ $*
+set grepformat=%f:%l:%c:%m
 " execute a search in the current directory (quickfix list)
-map <leader>sd :execute "cex system('ack --cc -w -H ".expand("<cword>")."')"<bar>cw<CR>
+map <leader>sd :execute "cex system('ag --vimgrep -w ".expand("<cword>")."')"<bar>cw<CR>
 " execute a search in the current file (location list)
-map <leader>sf :execute "cex system('ack --cc -w -H ".expand("<cword>")." ".expand("%")."')"<bar>cw<CR>
+map <leader>sf :execute "cex system('ag --vimgrep -w ".expand("<cword>")." ".expand("%")."')"<bar>cw<CR>
 
 " remap grep back to Ack
 command! -nargs=* Ack grep -H <args>
