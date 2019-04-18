@@ -6,6 +6,10 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
+" Needed for fuzzy finder
+set rtp+=~/.fzf
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -32,6 +36,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 
 Plugin 'trotter/autojump.vim'
+Plugin 'junegunn/fzf.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " To ignore plugin indent changes, instead use:
