@@ -49,6 +49,7 @@ set -g @resurrect-strategy-vim 'session'
 
 # enable vi mode
 set-window-option -g mode-keys vi
+bind-key p paste-buffer
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
