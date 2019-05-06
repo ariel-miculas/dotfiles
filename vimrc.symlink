@@ -323,6 +323,9 @@ inoremap jk <esc>
 " vv to generate new vertical split
 nnore map <silent> vv <C-w>v
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 set backspace=2
 
 " (Hopefully) removes the delay when hitting esc in insert mode
