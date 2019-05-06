@@ -20,8 +20,8 @@ install/tmux_install.sh
 # build vim
 install/build-vim.sh
 
-# install ack
-cpan install App::Ack
+# install ag
+sudo apt install silversearcher-ag
 
 # install ycm plugin(has external dependencies)
 ./install/install_ycm.sh
