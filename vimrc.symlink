@@ -215,7 +215,7 @@ set updatetime=250
 set diffopt+=vertical
 
 " tagbar
-nnoremap <silent> <leader>b :TagbarToggle<CR>
+nnoremap <silent> <leader><space> :TagbarToggle<CR>
 
 " tmux
 let g:tmux_navigator_no_mappings = 1
@@ -263,6 +263,14 @@ let g:ycm_extra_conf_globlist = ['~/work/*', ]
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" FZF
+nnoremap <silent> <leader>f :Files<cr>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>l :BLines<CR>
+nnoremap <silent> <leader>] :BTags<CR>
+nnoremap <silent> <leader>c :Commits<CR>
+nnoremap <silent> <leader>h :History<CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
