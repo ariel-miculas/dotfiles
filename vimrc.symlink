@@ -300,8 +300,14 @@ nnoremap / /\v
 " press jk instead of ESC to exit insert mode
 inoremap jk <esc>
 
-" remap capslock key to escape in xubuntu (add it in 'session and startup', 'application autostart')
-" xmodmap -e "clear Lock" -e "keysym Caps_Lock = Escape"
+" remap capslock key to control in ubuntu
+" sudo vi /etc/default/keyboard
+" And edit XKBOPTIONS="ctrl:nocaps"
+" Then, reconfigure:
+" sudo dpkg-reconfigure keyboard-configuration
+
+" vv to generate new vertical split
+nnore map <silent> vv <C-w>v
 
 set backspace=2
 
