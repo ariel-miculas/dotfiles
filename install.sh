@@ -15,12 +15,7 @@ rm ~/.profile
 install/install.py
 
 # useful programs
-sudo apt-get install tmux
-
-# avoid eye strain by taking regular breaks
-sudo add-apt-repository ppa:slgobinath/safeeyes
-sudo apt update
-sudo apt install safeeyes
+install/tmux_install.sh
 
 # build vim
 install/build-vim.sh
