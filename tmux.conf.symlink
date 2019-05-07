@@ -63,6 +63,9 @@ set -g @continuum-restore 'on'
 set -g @continuum-boot 'on'
 set -g @continuum-systemd-start-cmd 'start-server'
 
+# tmuxline theme
+if-shell "test -f ~/.tmux/tmuxline" "source ~/.tmux/tmuxline"
+
 # prefix highlight
 set -g status-right '#{prefix_highlight} | %a %Y-%m-%d %H:%M'
 set -g @prefix_highlight_show_copy_mode 'on'
