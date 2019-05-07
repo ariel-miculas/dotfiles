@@ -24,10 +24,6 @@ bind -n S-Left previous-window
 # Binding to reload config file, useful for tweaking tmux
 bind R source ~/.tmux.conf \; display-message "Conf reloaded..."
 
-# Simplify Tmux Pane creation
-bind | split-window -h -c "#{pane_current_path}"
-bind - split-window -v -c "#{pane_current_path}"
-
 # Visual alert to activity in other pane
 set -g visual-activity on
 setw -g monitor-activity on
@@ -72,6 +68,7 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'tmux-plugins/tmux-pain-control'
 set -g @plugin 'Morantron/tmux-fingers'
 
 # Other examples:
