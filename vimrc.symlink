@@ -67,10 +67,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " the very bottom (see :help :wincmd and :help ^WJ).
 autocmd FileType qf wincmd J
 
-" useful macros for the C language
-autocmd FileType c let @i='I#include <jkA>jkj'
-autocmd FileType c let @l='Iprintf("f,\n"A);jk==0t,F\i '
-
 autocmd FileType asm setlocal commentstring=;\ %s
 
 autocmd FileType tex,plaintex set fo+=tc textwidth=120
@@ -79,11 +75,6 @@ autocmd FileType tex,plaintex set fo+=tc textwidth=120
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 set pastetoggle=<F2>
-
-" Tab/space handling
-set tabstop=4
-set shiftwidth=4
-set noexpandtab
 
 function! TabToggle()
     if &expandtab
@@ -99,9 +90,16 @@ nmap <F9> :call TabToggle()<CR>
 nnoremap <leader>et :execute "%!unexpand -t".&tabstop<ESC>
 nnoremap <leader>es :execute "%!expand -t".&tabstop<ESC>
 
+" Tab/space handling
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+
 set cindent
 set cinoptions+=g0
 
+set backspace=2
+set laststatus=2
 set ruler               " show line and column number
 syntax on               " syntax highlighting
 
@@ -139,8 +137,12 @@ set undofile
 set undodir=~/.vim/undo/
 
 let $BASH_ENV = "~/.bash_aliases"
+
 " make space the leader key
 map <space> \
+
+" press jk instead of ESC to exit insert mode
+inoremap jk <esc>
 
 " Show trailing whitespace:
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -195,18 +197,59 @@ map <leader>sd :execute "cex system('ag --vimgrep -w ".expand("<cword>")."')"<ba
 " execute a search in the current file (location list)
 map <leader>sf :execute "cex system('ag --vimgrep -w ".expand("<cword>")." ".expand("%")."')"<bar>cw<CR>
 
-" remap grep back to Ack
-command! -nargs=* Ack grep -H <args>
-command! -nargs=* LAck lgrep -H <args>
-
-" generate the next fibonacci element from the previous 2 lines
-let @f='"ayiwk"byiwjo=a+bjk'
-
 " map shortcut for make
 nnoremap <leader>m :update<bar>make<cr>
 
+" quit buffer(window)
+nnoremap <leader>q :bp<bar>bd#<CR>
+
+" Break habit of using arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" <Direction> doesn't work in insert mode
+inoremap <ESC>OA <Nop>
+inoremap <ESC>OB <Nop>
+inoremap <ESC>OC <Nop>
+inoremap <ESC>OD <Nop>
+
+vnoremap <down> <Nop>
+vnoremap <left> <Nop>
+vnoremap <right> <Nop>
+vnoremap <up> <Nop>
+
+" make typos work
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
+
+" use the very magic regex mode by remapping technique
+nnoremap / /\v
+
+" remap capslock key to control in ubuntu
+" sudo vi /etc/default/keyboard
+" And edit XKBOPTIONS="ctrl:nocaps"
+" Then, reconfigure:
+" sudo dpkg-reconfigure keyboard-configuration
+
+" vv to generate new vertical split
+nnoremap <silent> vv <C-w>v
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+" (Hopefully) removes the delay when hitting esc in insert mode
+set noesckeys
+set ttimeout
+set ttimeoutlen=1
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
 " Vim Airline stuff
-set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#whitespace#enabled = 0
@@ -283,56 +326,3 @@ nnoremap <silent> <leader>h :History<CR>
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" quit buffer(window)
-nnoremap <leader>q :bp<bar>bd#<CR>
-
-" Break habit of using arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
-" <Direction> doesn't work in insert mode
-inoremap <ESC>OA <Nop>
-inoremap <ESC>OB <Nop>
-inoremap <ESC>OC <Nop>
-inoremap <ESC>OD <Nop>
-
-vnoremap <down> <Nop>
-vnoremap <left> <Nop>
-vnoremap <right> <Nop>
-vnoremap <up> <Nop>
-
-" make typos work
-command! WQ wq
-command! Wq wq
-command! W w
-command! Q q
-
-" use the very magic regex mode by remapping technique
-nnoremap / /\v
-
-" press jk instead of ESC to exit insert mode
-inoremap jk <esc>
-
-" remap capslock key to control in ubuntu
-" sudo vi /etc/default/keyboard
-" And edit XKBOPTIONS="ctrl:nocaps"
-" Then, reconfigure:
-" sudo dpkg-reconfigure keyboard-configuration
-
-" vv to generate new vertical split
-nnoremap <silent> vv <C-w>v
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
-set backspace=2
-
-" (Hopefully) removes the delay when hitting esc in insert mode
-set noesckeys
-set ttimeout
-set ttimeoutlen=1
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
