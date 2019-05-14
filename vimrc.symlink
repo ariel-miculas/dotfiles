@@ -56,21 +56,38 @@ call vundle#end()            " required
 " Put your non-Plugin stuff after this line
 filetype plugin indent on
 
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+augroup vimrc
+    " Remove all vimrc autocommands
+    autocmd!
 
-" Disable automatic comment insertion
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    " Automatic reloading of .vimrc
+    autocmd! bufwritepost .vimrc source %
 
-" This trigger takes advantage of the fact that the quickfix window can be
-" easily distinguished by its file-type, qf. The wincmd J command is
-" equivalent to the Ctrl+W, Shift+J shortcut telling Vim to move a window to
-" the very bottom (see :help :wincmd and :help ^WJ).
-autocmd FileType qf wincmd J
+    " Return to the last edit position when opening files
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   exe "normal! g`\"" |
+                \ endif
 
-autocmd FileType asm setlocal commentstring=;\ %s
+    autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 
-autocmd FileType tex,plaintex set fo+=tc textwidth=120
+    " Disable automatic comment insertion
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+    " This trigger takes advantage of the fact that the quickfix window can be
+    " easily distinguished by its file-type, qf. The wincmd J command is
+    " equivalent to the Ctrl+W, Shift+J shortcut telling Vim to move a window to
+    " the very bottom (see :help :wincmd and :help ^WJ).
+    autocmd FileType qf wincmd J
+
+    autocmd FileType asm setlocal commentstring=;\ %s
+
+    autocmd FileType tex,plaintex set fo+=tc textwidth=120
+augroup END
+
+" Show trailing whitespace:
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
@@ -145,11 +162,6 @@ map <space> \
 " press jk instead of ESC to exit insert mode
 inoremap jk <esc>
 
-" Show trailing whitespace:
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
 " Colour Scheme
 set t_Co=256
 set termguicolors
@@ -184,12 +196,6 @@ nnoremap <S-Tab> <C-o>
 
 " Make Y command logical
 nnoremap Y y$
-
-" Return to the last edit position when opening files
-autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
 
 set grepprg=ag\ --vimgrep\ $*
 set grepformat=%f:%l:%c:%m
