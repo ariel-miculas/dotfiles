@@ -163,7 +163,6 @@ map <space> \
 inoremap jk <esc>
 
 " Colour Scheme
-set t_Co=256
 set termguicolors
 " fix spellchecking for the gruvbox colorscheme
 let g:gruvbox_guisp_fallback = "bg"
