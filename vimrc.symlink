@@ -205,6 +205,12 @@ nnoremap <leader>m :update<bar>make<cr>
 " quit buffer(window)
 nnoremap <leader>q :bp<bar>bd#<CR>
 
+"save current buffer
+nnoremap <leader>w :w<cr>
+
+" replace the word under cursor
+nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
+
 " Break habit of using arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
