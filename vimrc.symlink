@@ -80,8 +80,13 @@ augroup vimrc
     " the very bottom (see :help :wincmd and :help ^WJ).
     autocmd FileType qf wincmd J
 
+    " comments in assembly are marked by ';'
     autocmd FileType asm setlocal commentstring=;\ %s
 
+    " Latex: set textwidth to 120 and enable auto-wrapping
+    " t Auto-wrap text using textwidth
+    " c Auto-wrap comments using textwidth, inserting the current comment
+    "   leader automatically.
     autocmd FileType tex,plaintex set fo+=tc textwidth=120
 augroup END
 
