@@ -88,6 +88,11 @@ augroup vimrc
     " c Auto-wrap comments using textwidth, inserting the current comment
     "   leader automatically.
     autocmd FileType tex,plaintex set fo+=tc textwidth=120
+
+    " Set yapf as the python formatter
+    if executable('yapf')
+        autocmd FileType python set equalprg=yapf
+    endif
 augroup END
 
 " Show trailing whitespace:
