@@ -222,7 +222,7 @@ nnoremap <leader>q :bp<bar>bd#<CR>
 nnoremap <leader>w :w<cr>
 
 " replace the word under cursor
-nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
+nnoremap <leader>* :%s/\<<c-r><c-w>\>/
 
 " Break habit of using arrow keys
 noremap <Up> <NOP>
