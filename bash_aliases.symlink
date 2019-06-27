@@ -4,7 +4,7 @@ alias cls="tput reset"
 alias mc='EDITOR=vim mc'
 alias tmux="tmux -2"
 alias cb='xclip -sel clip'
-alias replace='perl -pie'
+alias pie='perl -pi -e'
 alias graph='git log --graph --oneline --all'
 alias weather='curl "https://wttr.in/Cluj-Napoca?m"'
 alias nmap_all='nmap -sS -sU -p- -sC -sV -O -Pn -v -oN output 137.74.202.89'
