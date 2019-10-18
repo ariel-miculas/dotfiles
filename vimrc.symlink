@@ -39,6 +39,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sleuth'
 
 Plugin 'junegunn/fzf.vim'
 
@@ -121,8 +122,6 @@ nnoremap <leader>es :execute "%!expand -t".&tabstop<ESC>
 
 " Tab/space handling
 set tabstop=4
-set shiftwidth=4
-set noexpandtab
 
 set cindent
 set cinoptions+=g0
