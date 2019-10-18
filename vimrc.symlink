@@ -101,11 +101,6 @@ augroup END
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-" Better copy & paste
-" When you want to paste large blocks of code into vim, press F2 before you
-" paste. At the bottom you should see ``-- INSERT (paste) --``.
-set pastetoggle=<F2>
-
 function! TabToggle()
     if &expandtab
         set noexpandtab
@@ -115,10 +110,6 @@ function! TabToggle()
 endfunction
 
 nmap <F9> :call TabToggle()<CR>
-
-" mappings to replace tabs with spaces and viceversa
-nnoremap <leader>et :execute "%!unexpand -t".&tabstop<ESC>
-nnoremap <leader>es :execute "%!expand -t".&tabstop<ESC>
 
 " Tab/space handling
 set tabstop=4
@@ -194,9 +185,6 @@ set path+=**
 set hidden
 set wildchar=<Tab> wildmenu wildmode=full
 
-" set encryption to the strongest method
-set cm=blowfish2
-
 " this is already mapped by default
 ":nnoremap <Tab> <C-i>
 nnoremap <S-Tab> <C-o>
@@ -241,12 +229,6 @@ vnoremap <down> <Nop>
 vnoremap <left> <Nop>
 vnoremap <right> <Nop>
 vnoremap <up> <Nop>
-
-" make typos work
-command! WQ wq
-command! Wq wq
-command! W w
-command! Q q
 
 " use the very magic regex mode by remapping technique
 nnoremap / /\v
