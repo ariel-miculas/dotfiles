@@ -32,6 +32,7 @@ Plugin 'w0rp/ale'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
 Plugin 'wellle/targets.vim'
+Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mhinz/vim-grepper'
 Plugin 'junegunn/fzf.vim'
 
