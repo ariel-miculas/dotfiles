@@ -208,6 +208,9 @@ nnoremap Y y$
 set grepprg=ag\ --vimgrep\ $*
 set grepformat=%f:%l:%c:%m
 
+" Add a shortcut for grepping the current word
+nnoremap <leader>* :grep --cc -w <c-r><c-w><cr>
+
 " map shortcut for make
 nnoremap <leader>m :update<bar>make<cr>
 
@@ -216,9 +219,6 @@ nnoremap <leader>q :bp<bar>bd#<CR>
 
 "save current buffer
 nnoremap <leader>w :w<cr>
-
-" replace the word under cursor
-nnoremap <leader>* :%s/\<<c-r><c-w>\>/
 
 " Break habit of using arrow keys
 noremap <Up> <NOP>
