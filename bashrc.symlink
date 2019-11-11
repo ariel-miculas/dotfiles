@@ -126,7 +126,7 @@ cd() {
 PATH="$PATH:/home/ariel/bin/"
 export PERL5LIB=/home/ariel/work/scripts/perl_lib
 export PERLDOC_PAGER='less -r'
-. /usr/share/autojump/autojump.sh
+_Z_CMD=j
 . ~/work/z/z.sh
 eval $(thefuck --alias)
 
