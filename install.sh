@@ -20,11 +20,17 @@ install/tmux_install.sh
 # build vim
 install/build-vim.sh
 
-# install ag
-sudo apt install silversearcher-ag
+# install Vundle
+[ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# install the vim plugins
+vim +PluginInstall +qall
 
 # install ycm plugin(has external dependencies)
 ./install/install_ycm.sh
+
+# install ag
+sudo apt install silversearcher-ag
 
 # install cppcheck (needed for the syntastic plugin)
 sudo apt-get install cppcheck

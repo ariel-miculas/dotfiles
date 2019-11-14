@@ -37,6 +37,3 @@ if __name__ == "__main__":
         link_name = f[:len(f)-len(SUFFIX)]
         create_symlink(link_name)
 
-    if not os.path.isdir(os.path.join(expanduser("~"), ".vim/bundle/Vundle.vim")):
-        print "cloning Vundle.vim..."
-        os.system("git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
