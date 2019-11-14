@@ -29,6 +29,9 @@ vim +PluginInstall +qall
 # install ycm plugin(has external dependencies)
 ./install/install_ycm.sh
 
+# install rupa/z
+(cd ~/work && git clone https://github.com/rupa/z)
+
 # install ag
 sudo apt install silversearcher-ag
 
