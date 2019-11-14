@@ -30,6 +30,8 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'mhinz/vim-grepper'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -280,6 +282,32 @@ nnoremap <silent> <leader>c :BCommits<CR>
 nnoremap <silent> <leader>C :Commits<CR>
 nnoremap <silent> <leader>h :History<CR>
 nnoremap <silent> <leader>a :Ag<Space>
+
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+  endif
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+  " ...
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+  endif
+  set showmode
+  set showcmd
+  set scrolloff=1
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+nnoremap yog :Goyo<cr>
 
 " Break habit of using arrow keys
 noremap <Up> <NOP>
