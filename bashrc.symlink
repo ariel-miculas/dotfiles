@@ -123,11 +123,11 @@ cd() {
     eval $(smart_cd $1)
 }
 
-PATH="$PATH:/home/ariel/bin/"
+PATH="$PATH:~/.bin/"
 export PERL5LIB=/home/ariel/work/scripts/perl_lib
 export PERLDOC_PAGER='less -r'
 _Z_CMD=j
-. ~/work/z/z.sh
+[ -f ~/work/z/z.sh ] && . ~/work/z/z.sh
 eval $(thefuck --alias)
 
 # show the git branch in the status line
