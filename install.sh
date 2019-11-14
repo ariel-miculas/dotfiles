@@ -35,6 +35,9 @@ vim +PluginInstall +qall
 # install ag
 sudo apt install silversearcher-ag
 
+# install bat
+sudo apt install bacula-console-qt
+
 # install cppcheck (needed for the syntastic plugin)
 sudo apt-get install cppcheck
 
