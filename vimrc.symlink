@@ -327,9 +327,3 @@ set ttimeoutlen=1
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
-" remap capslock key to control in ubuntu
-" sudo vi /etc/default/keyboard
-" And edit XKBOPTIONS="ctrl:nocaps"
-" Then, reconfigure:
-" sudo dpkg-reconfigure keyboard-configuration
-

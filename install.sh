@@ -40,3 +40,10 @@ sudo apt-get install cppcheck
 
 #forget all the hashed paths
 hash -r
+
+# remap capslock key to control in ubuntu
+# sudo vi /etc/default/keyboard
+# And edit XKBOPTIONS="ctrl:nocaps"
+# Then, reconfigure:
+# sudo dpkg-reconfigure keyboard-configuration
+
