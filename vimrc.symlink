@@ -315,16 +315,10 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" <Direction> doesn't work in insert mode
-inoremap <ESC>OA <Nop>
-inoremap <ESC>OB <Nop>
-inoremap <ESC>OC <Nop>
-inoremap <ESC>OD <Nop>
-
-vnoremap <down> <Nop>
-vnoremap <left> <Nop>
-vnoremap <right> <Nop>
-vnoremap <up> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
 
 " (Hopefully) removes the delay when hitting esc in insert mode
 set ttimeout
