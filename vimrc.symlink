@@ -327,7 +327,6 @@ vnoremap <right> <Nop>
 vnoremap <up> <Nop>
 
 " (Hopefully) removes the delay when hitting esc in insert mode
-set noesckeys
 set ttimeout
 set ttimeoutlen=1
 
