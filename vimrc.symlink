@@ -260,10 +260,11 @@ nnoremap <leader>t<space> :Tabularize /\v^\s+\S+\zs/l0l4<CR>
 nnoremap <leader>T<space> :Tabularize /\v\s+\S+\zs/l0l4<CR>
 
 " YCM shortcuts
-nnoremap <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <leader>gt :YcmCompleter GetType<CR>
-nnoremap <leader>gi :YcmCompleter GetDoc<CR>
-nnoremap <leader>gx :YcmCompleter FixIt<CR>
+nnoremap gd :YcmCompleter GoTo<CR>
+nnoremap gt :YcmCompleter GetType<CR>
+nnoremap gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>rn :YcmCompleter RefactorRename<space>
+nnoremap <leader>gf :YcmCompleter Format<CR>
 
 " YCM stuff
 let g:ycm_show_diagnostics_ui = 0
