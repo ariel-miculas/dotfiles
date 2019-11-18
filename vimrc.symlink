@@ -266,8 +266,6 @@ nnoremap <leader>gi :YcmCompleter GetDoc<CR>
 nnoremap <leader>gx :YcmCompleter FixIt<CR>
 
 " YCM stuff
-highlight Pmenu ctermfg=15 ctermbg=0
-let g:ycm_extra_conf_globlist = ['~/work/*', ]
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
