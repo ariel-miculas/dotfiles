@@ -86,6 +86,8 @@ augroup vimrc
 
     autocmd! User GoyoEnter nested call <SID>goyo_enter()
     autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+    autocmd BufEnter /* call LoadCscope()
 augroup END
 
 " Show trailing whitespace:
@@ -172,6 +174,13 @@ set background=dark
 
 " ctags stuff
 set tags=tags;
+
+" cscope stuff
+set cscopetag
+" 0-cscope has priority, 1-ctags has priority
+set csto=1
+set cscopeverbose
+set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 " configure the foldmethod
 set foldmethod=syntax
