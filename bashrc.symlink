@@ -126,8 +126,7 @@ cd() {
 PATH="$PATH:~/.bin/"
 export PERL5LIB=/home/ariel/work/scripts/perl_lib
 export PERLDOC_PAGER='less -r'
-_Z_CMD=j
-[ -f ~/work/z/z.sh ] && . ~/work/z/z.sh
+. /usr/share/autojump/autojump.sh
 eval $(thefuck --alias)
 
 # show the git branch in the status line
