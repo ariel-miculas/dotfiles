@@ -176,9 +176,6 @@ set background=dark
 set tags=tags;
 
 " cscope stuff
-set cscopetag
-" 0-cscope has priority, 1-ctags has priority
-set csto=1
 set cscopeverbose
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
