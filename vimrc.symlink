@@ -160,7 +160,7 @@ set undodir=~/.vim/undo/
 let $BASH_ENV = "~/.bash_aliases"
 
 " make space the leader key
-map <space> \
+let mapleader = " "
 
 " press jk instead of ESC to exit insert mode
 inoremap jk <esc>
