@@ -220,6 +220,7 @@ nnoremap <leader>* :grep --cc -w <c-r><c-w><cr>
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 let g:grepper = {}
+let g:grepper.tools = ['ag']
 let g:grepper.open = 0
 
 " map shortcut for make
