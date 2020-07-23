@@ -117,7 +117,7 @@ function! LoadCscope()
 endfunction
 
 
-nmap <F9> :call TabToggle()<CR>
+nmap <F9> :call TabToggle()<cr>
 
 set cindent
 set cinoptions+=g0
@@ -180,14 +180,14 @@ set tags=tags;
 set cscopeverbose
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
-nnoremap <leader>gs :cs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>gg :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>gc :cs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>gt :cs find t <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>ge :cs find e <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>gf :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nnoremap <leader>gi :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nnoremap <leader>gd :cs find d <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>gs :cs find s <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>gg :cs find g <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>gc :cs find c <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>gt :cs find t <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>ge :cs find e <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>gf :cs find f <C-R>=expand("<cfile>")<cr><cr>
+nnoremap <leader>gi :cs find i ^<C-R>=expand("<cfile>")<cr>$<cr>
+nnoremap <leader>gd :cs find d <C-R>=expand("<cword>")<cr><cr>
 
 " configure the foldmethod
 set foldmethod=syntax
@@ -227,7 +227,7 @@ let g:grepper.open = 0
 nnoremap <leader>m :update<bar>make<cr>
 
 " quit buffer(window)
-nnoremap <leader>q :bp<bar>bd#<CR>
+nnoremap <leader>q :bp<bar>bd#<cr>
 
 " use the very magic regex mode by remapping technique
 nnoremap / /\v
@@ -251,7 +251,7 @@ set updatetime=250
 set diffopt+=vertical
 
 " tagbar
-nnoremap <silent> <leader><space> :TagbarToggle<CR>
+nnoremap <silent> <leader><space> :TagbarToggle<cr>
 
 " tmux
 let g:tmux_navigator_no_mappings = 1
@@ -264,7 +264,7 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 " vimux
 let g:VimuxHeight = "30"
 nnoremap <silent> <leader>r :VimuxPromptCommand<cr>
-nnoremap <silent> <Leader>rr :VimuxRunLastCommand<CR>
+nnoremap <silent> <leader>rr :VimuxRunLastCommand<cr>
 
 " ALE
 let g:ale_echo_msg_error_str = 'E'
@@ -281,18 +281,18 @@ let g:ale_linters = {
 " Tabularize shortcuts
 " lowercase t for aligning only at the first occurence
 " UPPERCASE T for aligning at all the occurences
-nnoremap <leader>t, :Tabularize /^[^,]*,\zs<CR>
-nnoremap <leader>T, :Tabularize /,\zs<CR>
+nnoremap <leader>t, :Tabularize /^[^,]*,\zs<cr>
+nnoremap <leader>T, :Tabularize /,\zs<cr>
 
-nnoremap <leader>t: :Tabularize /^[^:]*:\zs<CR>
-nnoremap <leader>T: :Tabularize /:\zs<CR>
+nnoremap <leader>t: :Tabularize /^[^:]*:\zs<cr>
+nnoremap <leader>T: :Tabularize /:\zs<cr>
 
-nnoremap <leader>t= :Tabularize /^[^=]*\zs=<CR>
-nnoremap <leader>T= :Tabularize /=<CR>
+nnoremap <leader>t= :Tabularize /^[^=]*\zs=<cr>
+nnoremap <leader>T= :Tabularize /=<cr>
 
 " for assembly alignment
-nnoremap <leader>t<space> :Tabularize /\v^\s+\S+\zs/l0l4<CR>
-nnoremap <leader>T<space> :Tabularize /\v\s+\S+\zs/l0l4<CR>
+nnoremap <leader>t<space> :Tabularize /\v^\s+\S+\zs/l0l4<cr>
+nnoremap <leader>T<space> :Tabularize /\v\s+\S+\zs/l0l4<cr>
 
 " YCM stuff
 let g:ycm_show_diagnostics_ui = 0
@@ -303,14 +303,14 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 
 " FZF
 nnoremap <silent> <leader>f :Files<cr>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>l :BLines<CR>
-nnoremap <silent> <leader>L :Lines<CR>
-nnoremap <silent> <leader>] :Tags<CR>
-nnoremap <silent> <leader>c :BCommits<CR>
-nnoremap <silent> <leader>C :Commits<CR>
-nnoremap <silent> <leader>h :History<CR>
-nnoremap <silent> <leader>a :Ag<Space>
+nnoremap <silent> <leader>b :Buffers<cr>
+nnoremap <silent> <leader>l :BLines<cr>
+nnoremap <silent> <leader>L :Lines<cr>
+nnoremap <silent> <leader>] :Tags<cr>
+nnoremap <silent> <leader>c :BCommits<cr>
+nnoremap <silent> <leader>C :Commits<cr>
+nnoremap <silent> <leader>h :History<cr>
+nnoremap <silent> <leader>a :Ag<space>
 
 function! s:goyo_enter()
   if executable('tmux') && strlen($TMUX)
