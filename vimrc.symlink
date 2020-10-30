@@ -228,6 +228,7 @@ let g:grepper.tools = ['ag']
 let g:grepper.open = 0
 
 let g:grepper.ag.grepprg .= ' --cc --cpp'
+command! Todo GrepperAg '(TODO|FIXME|XXX):'
 
 " Add a shortcut for grepping the current word
 nmap <leader>* gsiw
