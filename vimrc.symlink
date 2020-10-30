@@ -222,8 +222,8 @@ set grepformat=%f:%l:%c:%m
 nnoremap <leader>* :grep -w --cc --cpp <c-r><c-w><cr>
 
 " vim-grepper mappings
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
 let g:grepper = {}
 let g:grepper.tools = ['ag']
 let g:grepper.open = 0
