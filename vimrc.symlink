@@ -376,3 +376,6 @@ set ttimeoutlen=1
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
+" Fix weird characters showing up in vim
+let &t_TI = ""
+let &t_TE = ""
