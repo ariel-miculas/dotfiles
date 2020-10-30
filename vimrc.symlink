@@ -218,15 +218,18 @@ nnoremap Y y$
 set grepprg=ag\ --vimgrep\ $*
 set grepformat=%f:%l:%c:%m
 
-" Add a shortcut for grepping the current word
-nnoremap <leader>* :grep -w --cc --cpp <c-r><c-w><cr>
-
 " vim-grepper mappings
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
-let g:grepper = {}
+
+runtime plugin/grepper.vim
 let g:grepper.tools = ['ag']
 let g:grepper.open = 0
+
+let g:grepper.ag.grepprg .= ' --cc --cpp'
+
+" Add a shortcut for grepping the current word
+nmap <leader>* gsiw
 
 " map shortcut for make
 nnoremap <leader>m :update<bar>make<cr>
