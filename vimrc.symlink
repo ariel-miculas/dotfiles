@@ -212,6 +212,9 @@ nnoremap <S-Tab> <C-o>
 " Make Y command logical
 nnoremap Y y$
 
+" Convert each NameLikeThis to name_like_this in current line.
+" :s#\(\<\u\l\+\|\l\+\)\(\u\)#\l\1_\l\2#g
+
 set grepprg=ag\ --vimgrep\ $*
 set grepformat=%f:%l:%c:%m
 
