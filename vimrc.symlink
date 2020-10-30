@@ -34,6 +34,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'https://github.com/vim-scripts/matchit.zip'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
