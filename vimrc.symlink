@@ -231,7 +231,8 @@ let g:grepper.ag.grepprg .= ' --cc --cpp'
 command! Todo GrepperAg '(TODO|FIXME|XXX):'
 
 " Add a shortcut for grepping the current word
-nmap <leader>* gsiw
+nmap <leader>* :Grepper -noprompt -tool ag -query -w <c-r><c-w><cr>
+
 
 " map shortcut for make
 nnoremap <leader>m :update<bar>make<cr>
