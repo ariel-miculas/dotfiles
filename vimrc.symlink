@@ -74,6 +74,8 @@ augroup vimrc
     " comments in assembly are marked by ';'
     autocmd FileType asm setlocal commentstring=;\ %s
 
+    autocmd BufEnter *.asm setlocal filetype=nasm
+
     " Latex: set textwidth to 120 and enable auto-wrapping
     " t Auto-wrap text using textwidth
     " c Auto-wrap comments using textwidth, inserting the current comment
