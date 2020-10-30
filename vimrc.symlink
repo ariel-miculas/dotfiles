@@ -310,8 +310,15 @@ nnoremap <leader>gf :YcmCompleter Format<CR>
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_auto_hover=''
+let g:ycm_clangd_args = ['-log=verbose', '-pretty']
+
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
-let g:ycm_clangd_binary_path = exepath("clangd")
+" let g:ycm_clangd_binary_path = 'clangd'
+" let g:ycm_clangd_uses_ycmd_caching = 0
+
+" Disable YCM
+" let g:loaded_youcompleteme = 1
 
 " FZF
 nnoremap <silent> <leader>f :Files<cr>
