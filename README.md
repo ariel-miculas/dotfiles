@@ -1,11 +1,12 @@
-dotfiles
-========
-Quickstart
+# dotfiles
 
-sudo apt-get install git
+## Prerequisites
+```
+sudo apt install git
+```
 
-git clone https://www.bitbucket.org/king_arley2/dotfiles
-
+## Installation
+```
 cd dotfiles
-
 ./install.sh
+```
