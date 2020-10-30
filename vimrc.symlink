@@ -331,6 +331,10 @@ nnoremap <silent> <leader>C :Commits<cr>
 nnoremap <silent> <leader>h :History<cr>
 nnoremap <silent> <leader>a :Ag<space>
 
+" Vimwiki
+nmap <F13> <Plug>VimwikiNextLink
+nmap <F14> <Plug>VimwikiPrevLink
+
 function! s:goyo_enter()
   if executable('tmux') && strlen($TMUX)
     silent !tmux set status off
