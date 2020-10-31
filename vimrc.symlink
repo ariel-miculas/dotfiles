@@ -223,16 +223,21 @@ set grepformat=%f:%l:%c:%m
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
-runtime plugin/grepper.vim
+let g:grepper = {}
 let g:grepper.tools = ['ag']
 let g:grepper.open = 0
+let g:grepper.jump = 1
 
-let g:grepper.ag.grepprg .= ' --cc --cpp'
+let g:grepper.ag = {'grepprg': 'ag --vimgrep --cc --cpp',
+      \ 'grepformat': '%f:%l:%c:%m'}
+
 command! Todo GrepperAg '(TODO|FIXME|XXX):'
 
 " Add a shortcut for grepping the current word
-nnoremap <leader>* :Grepper -noprompt -tool ag -query -w <c-r><c-w><cr>
+nnoremap <leader>* :Grepper -noprompt -query -w <c-r><c-w><cr>
 
+" Add a shortcut for grepping the current word
+nnoremap <leader>s :Grepper -noprompt -query -w<space>
 
 " map shortcut for make
 nnoremap <leader>m :update<bar>make<cr>
