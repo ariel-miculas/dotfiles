@@ -231,7 +231,7 @@ let g:grepper.jump = 1
 let g:grepper.ag = {'grepprg': 'ag --vimgrep --cc --cpp',
       \ 'grepformat': '%f:%l:%c:%m'}
 
-command! Todo GrepperAg '(TODO|FIXME|XXX):'
+command! Todo GrepperAg '(TODO|FIXME|XXX)'
 
 " Add a shortcut for grepping the current word
 nnoremap <leader>* :Grepper -noprompt -query -w <c-r><c-w><cr>
