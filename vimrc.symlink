@@ -53,8 +53,8 @@ augroup vimrc
     " Remove all vimrc autocommands
     autocmd!
 
-    " Automatic reloading of .vimrc
-    autocmd! bufwritepost .vimrc source %
+    " " Automatic reloading of .vimrc
+    " autocmd! bufwritepost .vimrc source %
 
     " Return to the last edit position when opening files
     autocmd BufReadPost *
