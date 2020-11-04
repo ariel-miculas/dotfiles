@@ -184,13 +184,13 @@ set cscopeverbose
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 nnoremap <leader>gs :cs find s <C-R>=expand("<cword>")<cr><cr>
-nnoremap <leader>gg :cs find g <C-R>=expand("<cword>")<cr><cr>
-nnoremap <leader>gc :cs find c <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>gd :cs find g <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>gr :cs find c <C-R>=expand("<cword>")<cr><cr>
 nnoremap <leader>gt :cs find t <C-R>=expand("<cword>")<cr><cr>
 nnoremap <leader>ge :cs find e <C-R>=expand("<cword>")<cr><cr>
 nnoremap <leader>gf :cs find f <C-R>=expand("<cfile>")<cr><cr>
 nnoremap <leader>gi :cs find i ^<C-R>=expand("<cfile>")<cr>$<cr>
-nnoremap <leader>gd :cs find d <C-R>=expand("<cword>")<cr><cr>
+nnoremap <leader>gg :cs find d <C-R>=expand("<cword>")<cr><cr>
 
 " configure the foldmethod
 set foldmethod=syntax
