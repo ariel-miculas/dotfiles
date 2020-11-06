@@ -27,14 +27,11 @@ vim +PlugInstall +qall
 # install fd_8.1.1
 (cd /tmp && wget https://github.com/sharkdp/fd/releases/download/v8.1.1/fd_8.1.1_amd64.deb && sudo dpkg -i fd_8.1.1_amd64.deb)
 
-# install bat
-sudo apt install bat
+# install bat_0.16.0
+(cd /tmp && wget https://github.com/sharkdp/bat/releases/download/v0.16.0/bat_0.16.0_amd64.deb && sudo dpkg -i bat_0.16.0_amd64.deb)
 
 # install ag
 sudo apt install silversearcher-ag
-
-# install bat
-sudo apt install bacula-console-qt
 
 # install cppcheck (needed for the syntastic plugin)
 sudo apt-get install cppcheck
