@@ -120,7 +120,7 @@ if ! shopt -oq posix; then
 fi
 
 cd() {
-    eval $(smart_cd $1)
+    eval $(smart_cd "$1")
 }
 
 PATH="$PATH:~/.bin/"
