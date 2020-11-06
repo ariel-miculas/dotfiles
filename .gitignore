@@ -1,7 +1,2 @@
 *.pyc
-vim.symlink/.netrwhist
-vim.symlink/bundle/*
-vim.symlink/backup_dir/
-vim.symlink/undo/
-vim.symlink/swap_files/
-
+vim_settings
