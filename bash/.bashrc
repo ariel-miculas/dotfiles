@@ -129,7 +129,7 @@ PATH="$PATH:/usr/local/i386elfgcc/bin"
 PATH="$PATH:/usr/local/x86_64elfgcc/bin"
 PATH="$PATH:/home/ariel/work/ghidra/jdk-11.0.8+10/bin"
 PATH="$PATH:/home/ariel/.local/bin"
-PATH="$PATH:/home/ariel/diff-so-fancy"
+PATH="$PATH:/home/ariel/work/diff-so-fancy"
 
 export PERL5LIB=/home/ariel/work/scripts/perl_lib
 export PERLDOC_PAGER='less -r'
