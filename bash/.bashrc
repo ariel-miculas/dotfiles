@@ -148,10 +148,6 @@ echo 'export DBUS_SESSION_BUS_ADDRESS' >> $HOME/.dbus/Xdbus
 export WRT_PATH=/home/ariel/work/wrt
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_OPTS="--preview '[[ \$(file --mime {}) =~ binary ]] &&
-                         echo {} is a binary file ||
-                         (bat --style=numbers --color=always {} ||
-                          cat {}) 2> /dev/null | head -500'
-                         --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+export FZF_DEFAULT_OPTS="--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
