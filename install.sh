@@ -12,7 +12,7 @@ rm ~/.bashrc
 rm ~/.profile
 
 # Install the dotfiles
-install/install.py
+# install/install.py
 
 # useful programs
 install/tmux_install.sh
