@@ -22,6 +22,7 @@ vim +PlugInstall +qall
 # install rupa/z
 (cd ~/work && git clone https://github.com/rupa/z)
 
+# install diff-so-fancy
 (cd ~/work && git clone git@github.com:so-fancy/diff-so-fancy.git)
 
 # install fd_8.1.1
