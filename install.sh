@@ -1,5 +1,5 @@
 # This script installs the dotfiles, compiles vim from sources and installs other
-# usefull programs
+# useful programs
 
 # colorschemes for the terminal
 install/get-base16-colorschemes.sh
@@ -7,14 +7,7 @@ install/get-base16-colorschemes.sh
 # fonts for the terminal (used by vim)
 fonts/install.sh
 
-# remove .rc files from home so they can be overwritten by the dotfiles script
-rm ~/.bashrc
-rm ~/.profile
-
-# Install the dotfiles
-# install/install.py
-
-# useful programs
+# tmux
 install/tmux_install.sh
 
 # build vim
@@ -29,6 +22,14 @@ vim +PlugInstall +qall
 # install rupa/z
 (cd ~/work && git clone https://github.com/rupa/z)
 
+(cd ~/work && git clone git@github.com:so-fancy/diff-so-fancy.git)
+
+# install fd_8.1.1
+(cd /tmp && wget https://github.com/sharkdp/fd/releases/download/v8.1.1/fd_8.1.1_amd64.deb && sudo dpkg -i fd_8.1.1_amd64.deb)
+
+# install bat
+sudo apt install bat
+
 # install ag
 sudo apt install silversearcher-ag
 
@@ -37,6 +38,9 @@ sudo apt install bacula-console-qt
 
 # install cppcheck (needed for the syntastic plugin)
 sudo apt-get install cppcheck
+
+# install stow (needed for dotfiles)
+sudo apt install stow
 
 #forget all the hashed paths
 hash -r
