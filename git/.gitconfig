@@ -1,0 +1,35 @@
+[user]
+	name = Ariel Miculas
+	email = ariel.miculas@gmail.com
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
+[alias]
+	co = checkout
+	s = status
+	d = diff
+	dc = diff --cached
+	a = add
+	l = log
+	p = push
+	cm = commit -m
+	cl = clone
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
