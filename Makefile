@@ -1,7 +1,8 @@
+.PHONY:install all dotfiles
 install:
 	./install.sh
 
 all: install dotfiles
 
 dotfiles:
-	stow -n -v -R -t ~ vim bash git
+	stow -v -R -t ~ vim bash git

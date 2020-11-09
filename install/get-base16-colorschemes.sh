@@ -1,4 +1,6 @@
+#!/bin/sh
 # install base 16 colorschemes for xfce terminal
+set -e
 curr_dir=$(pwd)
 mkdir -p ~/work
 cd ~/work

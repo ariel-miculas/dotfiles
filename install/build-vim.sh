@@ -1,8 +1,10 @@
+#!/bin/sh
 # Building vim
 # get dependencies
+set -e
 curr_dir=$(pwd)
 
-sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
+sudo apt install -y libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev \
     python3-dev libperl-dev git
@@ -20,7 +22,7 @@ cd vim
             --enable-gui=gnome2 \
             --enable-cscope \
             --prefix=/usr/local
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim81
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 sudo make install
 # make vim the default editor and map vi to vim
 sudo update-alternatives --install  /usr/bin/editor editor /usr/local/bin/vim 1

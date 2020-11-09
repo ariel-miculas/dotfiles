@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+set -e
 
 # Set source and target directories
 powerline_fonts_dir=$( cd "$( dirname "$0" )" && pwd )

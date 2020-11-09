@@ -1,5 +1,6 @@
-# This script installs the dotfiles, compiles vim from sources and installs other
-# useful programs
+#!/bin/sh
+# This script compiles vim from sources and installs other useful programs
+set -e
 
 # colorschemes for the terminal
 install/get-base16-colorschemes.sh
@@ -19,8 +20,6 @@ vim +PlugInstall +qall
 # install ycm plugin(has external dependencies)
 ./install/install_ycm.sh
 
-# install rupa/z
-(cd ~/work && git clone https://github.com/rupa/z)
 
 # install diff-so-fancy
 (cd ~/work && git clone git@github.com:so-fancy/diff-so-fancy.git)
@@ -31,14 +30,14 @@ vim +PlugInstall +qall
 # install bat_0.16.0
 (cd /tmp && wget https://github.com/sharkdp/bat/releases/download/v0.16.0/bat_0.16.0_amd64.deb && sudo dpkg -i bat_0.16.0_amd64.deb)
 
-# install ag
-sudo apt install silversearcher-ag
+# install autojump
+sudo apt install -y autojump
 
-# install cppcheck (needed for the syntastic plugin)
-sudo apt-get install cppcheck
+# install ag
+sudo apt install -y silversearcher-ag
 
 # install stow (needed for dotfiles)
-sudo apt install stow
+sudo apt install -y stow
 
 #forget all the hashed paths
 hash -r

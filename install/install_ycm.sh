@@ -1,6 +1,8 @@
+#!/bin/sh
+set -e
 curr_dir=$(pwd)
-sudo apt-get install build-essential cmake
-sudo apt-get install python-dev python3-dev
+sudo apt install -y build-essential cmake
+sudo apt install -y python-dev python3-dev
 cd ~/.vim/bundle/YouCompleteMe || exit
 python3 ./install.py --clangd-completer
 cd "$curr_dir"
