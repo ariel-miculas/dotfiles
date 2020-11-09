@@ -220,6 +220,18 @@ nnoremap Y y$
 set grepprg=ag\ --vimgrep\ $*
 set grepformat=%f:%l:%c:%m
 
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<c-u>
+      \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<cr>
+      \gvy/<c-r>=&ic?'\c':'\C'<cr><c-r><c-r>=substitute(
+      \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<cr><cr>
+      \gVzv:call setreg('"', old_reg, old_regtype)<cr>
+vnoremap <silent> # :<c-u>
+      \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<cr>
+      \gvy?<c-r>=&ic?'\c':'\C'<cr><c-r><c-r>=substitute(
+      \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<cr><cr>
+      \gVzv:call setreg('"', old_reg, old_regtype)<cr>
+
 " vim-grepper mappings
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
