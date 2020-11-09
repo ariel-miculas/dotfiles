@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Building vim
 # get dependencies
 set -e

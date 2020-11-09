@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 curr_dir=$(pwd)
 sudo apt install -y build-essential cmake

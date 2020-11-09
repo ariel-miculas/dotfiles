@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # install base 16 colorschemes for xfce terminal
 set -e
 curr_dir=$(pwd)

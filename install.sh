@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # This script compiles vim from sources and installs other useful programs
 set -e
 
