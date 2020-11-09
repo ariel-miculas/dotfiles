@@ -5,4 +5,4 @@ install:
 all: install dotfiles
 
 dotfiles:
-	stow -v -R -t ~ vim bash git
+	stow -v -R -t ~ vim bash git tmux input
