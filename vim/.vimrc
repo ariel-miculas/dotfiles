@@ -183,6 +183,7 @@ set tags=tags;
 set cscopeverbose
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
+nnoremap <leader>ga :cs find a <C-R>=expand("<cword>")<cr><cr>
 nnoremap <leader>gs :cs find s <C-R>=expand("<cword>")<cr><cr>
 nnoremap <leader>gd :cs find g <C-R>=expand("<cword>")<cr><cr>
 nnoremap <leader>gr :cs find c <C-R>=expand("<cword>")<cr><cr>
