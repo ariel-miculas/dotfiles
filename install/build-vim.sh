@@ -12,8 +12,9 @@ sudo apt install -y libncurses5-dev libgnome2-dev libgnomeui-dev \
 mkdir -p ~/work
 cd ~/work
 # clone the vim repo
-git clone https://github.com/vim/vim.git
+(cd vim && git fetch) || (git clone https://github.com/vim/vim.git)
 cd vim
+git checkout v8.2.1971
 ./configure --with-features=huge \
             --enable-multibyte \
             --enable-python3interp=yes \
