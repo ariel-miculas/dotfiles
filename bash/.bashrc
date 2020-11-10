@@ -140,10 +140,10 @@ eval $(thefuck --alias)
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[33;1m\]\n\$(__git_ps1 '[%s]')\[\033[00m\]\$ "
 
 # this allows crontab to display a visual notification
-touch $HOME/.dbus/Xdbus
-chmod 600 $HOME/.dbus/Xdbus
-env | grep DBUS_SESSION_BUS_ADDRESS > $HOME/.dbus/Xdbus
-echo 'export DBUS_SESSION_BUS_ADDRESS' >> $HOME/.dbus/Xdbus
+touch "$HOME/.dbus/Xdbus"
+chmod 600 "$HOME/.dbus/Xdbus"
+env | grep DBUS_SESSION_BUS_ADDRESS > "$HOME/.dbus/Xdbus"
+echo 'export DBUS_SESSION_BUS_ADDRESS' >> "$HOME/.dbus/Xdbus"
 
 export WRT_PATH=/home/ariel/work/wrt
 
