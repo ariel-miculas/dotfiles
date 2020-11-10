@@ -169,10 +169,15 @@ let mapleader = " "
 " press jk instead of ESC to exit insert mode
 inoremap jk <esc>
 
-" Colour Scheme
-set termguicolors
+" This setting causes a bug, when a terminal in opened inside vim, it doesn't
+" have the correct background/colorscheme. This was needed for gruvbox colors
+" to render properly, but a script was added to ~/.bashrc to circumvent this
+" issue.
+" set termguicolors
+
 " fix spellchecking for the gruvbox colorscheme
 let g:gruvbox_guisp_fallback = "bg"
+" Color Scheme
 colorscheme gruvbox
 set background=dark
 
