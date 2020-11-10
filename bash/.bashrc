@@ -151,5 +151,6 @@ export WRT_PATH=/home/ariel/work/wrt
 export FZF_DEFAULT_OPTS="--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.forgit/forgit.plugin.sh ] && source ~/.forgit/forgit.plugin.sh
 
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
