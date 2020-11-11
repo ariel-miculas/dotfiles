@@ -359,6 +359,10 @@ nnoremap <silent> <leader>C :Commits<cr>
 nnoremap <silent> <leader>h :History<cr>
 nnoremap <silent> <leader>a :Ag<space>
 
+" Preview window on the right side of the window,
+" hidden by default, ctrl-/ to toggle
+let g:fzf_preview_window = ['right:hidden', 'ctrl-/']
+
 " Vimwiki
 nmap <F13> <Plug>VimwikiNextLink
 nmap <F14> <Plug>VimwikiPrevLink
