@@ -34,4 +34,4 @@
 	new = green bold
 	whitespace = red reverse
 [diff-so-fancy]
-	markEmptyLines = false
+	markEmptyLines = true
