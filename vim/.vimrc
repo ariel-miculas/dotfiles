@@ -13,7 +13,7 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'morhetz/gruvbox'
+Plug 'ariel-miculas/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'RRethy/vim-illuminate'
