@@ -84,7 +84,18 @@ SAVEHIST=$HISTSIZE
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump tmux vi-mode fzf encode64 fd zsh-syntax-highlighting)
+plugins=(
+  git
+  autojump
+  tmux
+  vi-mode
+  fzf
+  encode64
+  fd
+  alias-tips
+  dircycle
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.zsh_aliases"
