@@ -81,6 +81,7 @@ plugins=(git autojump tmux vi-mode fzf encode64 fd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+source "$HOME/.zsh_aliases"
 
 # User configuration
 
@@ -99,20 +100,3 @@ bindkey -a j down-line-or-beginning-search
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-
-alias cls="tput reset"
-alias tmux="tmux -2"
-alias cb='xclip -sel clip'
-alias pie='perl -pi -e'
-alias graph='git log --graph --oneline --all'
-alias nmap_all='nmap -sS -sU -p- -sC -sV -O -Pn -v -oN output 137.74.202.89'
-alias cat=bat
-alias gcb='git checkout "$(git branch -a | sed "s/  //" | grep -v "^*" | fzf)"'
-alias gct='git checkout "$(git tag | fzf)"'
-alias fda="fd -H -I"
-alias gs="git status"
