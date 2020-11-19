@@ -98,6 +98,13 @@ augroup END
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+" unhiglight search
+imap <silent> <c-c> <ESC>:nohlsearch<CR>a
+nmap <silent> <c-c> :nohlsearch<CR>
+
+noremap  <F4> :set cursorline! cursorcolumn!<CR>
+inoremap <F4> <ESC>:set cursorline! cursorcolumn!<CR>i
+
 function! TabToggle()
     if &expandtab
         set noexpandtab
