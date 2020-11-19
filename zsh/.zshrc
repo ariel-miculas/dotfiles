@@ -104,6 +104,15 @@ bindkey -a j down-line-or-beginning-search
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias cls="tput reset"
+alias tmux="tmux -2"
+alias cb='xclip -sel clip'
+alias pie='perl -pi -e'
+alias graph='git log --graph --oneline --all'
+alias nmap_all='nmap -sS -sU -p- -sC -sV -O -Pn -v -oN output 137.74.202.89'
+alias cat=bat
+alias gcb='git checkout "$(git branch -a | sed "s/  //" | grep -v "^*" | fzf)"'
+alias gct='git checkout "$(git tag | fzf)"'
+alias fda="fd -H -I"
+alias gs="git status"
