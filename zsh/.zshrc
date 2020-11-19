@@ -87,7 +87,6 @@ SAVEHIST=$HISTSIZE
 plugins=(git autojump tmux vi-mode fzf encode64 fd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 source "$HOME/.zsh_aliases"
 
 # User configuration

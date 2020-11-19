@@ -182,7 +182,8 @@ let g:gruvbox_guisp_fallback = "bg"
 colorscheme gruvbox
 set background=dark
 
-highlight Normal guibg=NONE ctermbg=NONE
+" For correct gruvbox colors
+set termguicolors
 
 " ctags stuff
 set tags=tags;
