@@ -35,6 +35,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'andymass/vim-matchup'
 Plug 'kana/vim-textobj-user'
+Plug 'AndrewRadev/sideways.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -296,6 +297,9 @@ nnoremap <silent> <leader><space> :TagbarToggle<cr>
 
 " tmux
 let g:tmux_navigator_no_mappings = 1
+
+nnoremap gh :SidewaysLeft<cr>
+nnoremap gl :SidewaysRight<cr>
 
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
