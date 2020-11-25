@@ -114,8 +114,8 @@ bindkey "jk" vi-cmd-mode
 bindkey -a k up-line-or-beginning-search
 bindkey -a j down-line-or-beginning-search
 
-bindkey '^[OD' insert-cycledleft
-bindkey '^[OC' insert-cycledright
+bindkey '^[[1;2D' insert-cycledleft
+bindkey '^[[1;2C' insert-cycledright
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
