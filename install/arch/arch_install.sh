@@ -1,11 +1,19 @@
+# Dotfiles support
+sudo pacman -S fd
+sudo pacman -S bat
+sudo pacman -S autojump
+sudo pacman -S the_silver_searcher
+sudo pacman -S zsh
+sudo pacman -S tmux
+sudo pacman -S cmake
+sudo pacman -S python3
+
 # Install development packages
 sudo pacman -S google-chrome
 sudo pacman -S --needed base-devel git
 sudo pacman -S ntfs-3g
 sudo pacman -S linux-headers
 sudo pacman -S virtualbox virtualbox-guest-iso
-sudo pacman -S stow
-sudo pacman -S cmake
 sudo pacman -S ncurses
 sudo pacman -S gtk2
 sudo pacman -S atk
@@ -15,14 +23,7 @@ sudo pacman -S libxpm
 sudo pacman -S libxt
 sudo pacman -S libxtst
 sudo pacman -S libsm
-sudo pacman -S python3
 sudo pacman -S wget
-sudo pacman -S fd
-sudo pacman -S bat
-sudo pacman -S autojump
-sudo pacman -S the_silver_searcher
-sudo pacman -S zsh
-sudo pacman -S tmux
 sudo pacman -S qemu
 sudo pacman -S gmp
 sudo pacman -S mpfr
@@ -66,6 +67,7 @@ sudo pacman -S ltrace
 
 # wine
 sudo pacman -S wine
+
 # vulkan
 sudo pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 
