@@ -2,6 +2,9 @@
 # This script compiles vim from sources and installs other useful programs
 set -e
 
+# First install the required dependencies
+./arch_install.sh
+
 # colorschemes for the terminal
 ../get-base16-colorschemes.sh
 
