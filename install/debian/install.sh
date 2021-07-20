@@ -3,22 +3,22 @@
 set -e
 
 # colorschemes for the terminal
-install/get-base16-colorschemes.sh
+../get-base16-colorschemes.sh
 
 # fonts for the terminal (used by vim)
-fonts/install.sh
+../../fonts/install.sh
 
 # tmux
-install/tmux_install.sh
+./tmux_install.sh
 
 # build vim
-install/build-vim.sh
+./build-vim.sh
 
 # install the vim plugins
 vim +PlugInstall +qall
 
 # install ycm plugin(has external dependencies)
-./install/install_ycm.sh
+./install_ycm.sh
 
 
 # install diff-so-fancy
