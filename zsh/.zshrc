@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/bin"
 PATH="$PATH:$HOME/.bin"
 PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-linux"
 PATH="$PATH:/usr/local/i386elfgcc/bin"
@@ -12,6 +13,10 @@ PATH="$PATH:/usr/local/x86_64elfgcc/bin"
 PATH="$PATH:$HOME/work/ghidra/jdk-11.0.8+10/bin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/work/diff-so-fancy"
+PATH="$PATH:/usr/lib/jvm/java-11-openjdk/bin"
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
 export DEFAULT_USER="$(whoami)"
 # Path to your oh-my-zsh installation.
@@ -95,6 +100,7 @@ plugins=(
   alias-tips
   dircycle
   zsh-syntax-highlighting
+  ranger-autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,6 +108,9 @@ source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 source "$HOME/.zsh_aliases"
 
 # User configuration
+export FZF_DEFAULT_OPTS="--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
