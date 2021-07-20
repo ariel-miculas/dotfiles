@@ -22,7 +22,7 @@ vim +PlugInstall +qall
 
 
 # install diff-so-fancy
-(cd ~/work && git clone git@github.com:so-fancy/diff-so-fancy.git)
+(cd ~/work && git clone https://github.com/so-fancy/diff-so-fancy.git)
 
 # install fd_8.1.1
 (cd /tmp && wget https://github.com/sharkdp/fd/releases/download/v8.1.1/fd_8.1.1_amd64.deb && sudo dpkg -i fd_8.1.1_amd64.deb)
