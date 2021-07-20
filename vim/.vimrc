@@ -425,6 +425,8 @@ set list listchars=tab:»·,trail:·
 let &t_TI = ""
 let &t_TE = ""
 
+command! NewMasm :r ~/master_2020/pla/asm_tools/npp/Plugins/Config/asm_template.asm
+
 call textobj#user#plugin('cfunctioncall', {
 \   'function': {
 \     'pattern': '\v[a-zA-Z0-9_]+(::)?[a-zA-Z0-9_]+',
