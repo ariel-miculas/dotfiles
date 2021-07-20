@@ -1,16 +1,26 @@
 # Dotfiles support
 sudo pacman --noconfirm -S fd
 sudo pacman --noconfirm -S bat
-sudo pacman --noconfirm -S autojump
 sudo pacman --noconfirm -S the_silver_searcher
 sudo pacman --noconfirm -S zsh
 sudo pacman --noconfirm -S tmux
 sudo pacman --noconfirm -S cmake
 sudo pacman --noconfirm -S python3
 
+## Install yay
+sudo pacman --noconfirm -S --needed base-devel git
+mkdir -p ~/work
+pushd ~/work
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+popd
+
+## Install autojump
+yay -S autojump
+
 # Install development packages
 sudo pacman --noconfirm -S google-chrome
-sudo pacman --noconfirm -S --needed base-devel git
 sudo pacman --noconfirm -S ntfs-3g
 sudo pacman --noconfirm -S linux-headers
 sudo pacman --noconfirm -S virtualbox virtualbox-guest-iso
