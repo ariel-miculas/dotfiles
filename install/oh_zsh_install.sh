@@ -1,9 +1,3 @@
-#!/bin/bash
-sudo apt install zsh
-
-# Make zsh the default shell
-chsh -s $(which zsh)
-
 # Install oh-my-zsh
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 

@@ -4,6 +4,11 @@
 set -e
 curr_dir=$(pwd)
 
+sudo apt install -y \
+    libncurses5-dev libgtk2.0-dev libatk1.0-dev libatk-adaptor \
+    libcairo2-dev libx11-dev libxpm-dev libxt-dev \
+    libxtst-dev libsm-dev python3-dev libperl-dev git
+
 mkdir -p ~/work
 cd ~/work
 # clone the vim repo
@@ -23,5 +28,10 @@ make distclean
             --prefix=/usr/local
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 sudo make install
+# make vim the default editor and map vi to vim
+sudo update-alternatives --install  /usr/bin/editor editor /usr/local/bin/vim 1
+sudo update-alternatives --set      editor /usr/local/bin/vim
+sudo update-alternatives --install  /usr/bin/vi vi /usr/local/bin/vim 1
+sudo update-alternatives --set      vi /usr/local/bin/vim
 
 cd $curr_dir
