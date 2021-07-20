@@ -1,81 +1,81 @@
 # Dotfiles support
-sudo pacman -S fd
-sudo pacman -S bat
-sudo pacman -S autojump
-sudo pacman -S the_silver_searcher
-sudo pacman -S zsh
-sudo pacman -S tmux
-sudo pacman -S cmake
-sudo pacman -S python3
+sudo pacman --noconfirm -S fd
+sudo pacman --noconfirm -S bat
+sudo pacman --noconfirm -S autojump
+sudo pacman --noconfirm -S the_silver_searcher
+sudo pacman --noconfirm -S zsh
+sudo pacman --noconfirm -S tmux
+sudo pacman --noconfirm -S cmake
+sudo pacman --noconfirm -S python3
 
 # Install development packages
-sudo pacman -S google-chrome
-sudo pacman -S --needed base-devel git
-sudo pacman -S ntfs-3g
-sudo pacman -S linux-headers
-sudo pacman -S virtualbox virtualbox-guest-iso
-sudo pacman -S ncurses
-sudo pacman -S gtk2
-sudo pacman -S atk
-sudo pacman -S cairo
-sudo pacman -S libx11
-sudo pacman -S libxpm
-sudo pacman -S libxt
-sudo pacman -S libxtst
-sudo pacman -S libsm
-sudo pacman -S wget
-sudo pacman -S qemu
-sudo pacman -S gmp
-sudo pacman -S mpfr
-sudo pacman -S libmpc
-sudo pacman -S grpc
-sudo pacman -S fmt
-sudo pacman -S spdlog
-sudo pacman -S jsoncpp
-sudo pacman -S nasm
-sudo pacman -S libisoburn
-sudo pacman -S mtools
-sudo pacman -S meld
-sudo pacman -S meson
-sudo pacman -S cscope
-sudo pacman -S man-pages
-sudo pacman -S jdk11-openjdk
-sudo pacman -S zip
-sudo pacman -S unzip
-sudo pacman -S pulseaudio-bluetooth
-sudo pacman -S wireshark-qt
-sudo pacman -S texlive-most
-sudo pacman -S docker
-sudo pacman -S rsync
+sudo pacman --noconfirm -S google-chrome
+sudo pacman --noconfirm -S --needed base-devel git
+sudo pacman --noconfirm -S ntfs-3g
+sudo pacman --noconfirm -S linux-headers
+sudo pacman --noconfirm -S virtualbox virtualbox-guest-iso
+sudo pacman --noconfirm -S ncurses
+sudo pacman --noconfirm -S gtk2
+sudo pacman --noconfirm -S atk
+sudo pacman --noconfirm -S cairo
+sudo pacman --noconfirm -S libx11
+sudo pacman --noconfirm -S libxpm
+sudo pacman --noconfirm -S libxt
+sudo pacman --noconfirm -S libxtst
+sudo pacman --noconfirm -S libsm
+sudo pacman --noconfirm -S wget
+sudo pacman --noconfirm -S qemu
+sudo pacman --noconfirm -S gmp
+sudo pacman --noconfirm -S mpfr
+sudo pacman --noconfirm -S libmpc
+sudo pacman --noconfirm -S grpc
+sudo pacman --noconfirm -S fmt
+sudo pacman --noconfirm -S spdlog
+sudo pacman --noconfirm -S jsoncpp
+sudo pacman --noconfirm -S nasm
+sudo pacman --noconfirm -S libisoburn
+sudo pacman --noconfirm -S mtools
+sudo pacman --noconfirm -S meld
+sudo pacman --noconfirm -S meson
+sudo pacman --noconfirm -S cscope
+sudo pacman --noconfirm -S man-pages
+sudo pacman --noconfirm -S jdk11-openjdk
+sudo pacman --noconfirm -S zip
+sudo pacman --noconfirm -S unzip
+sudo pacman --noconfirm -S pulseaudio-bluetooth
+sudo pacman --noconfirm -S wireshark-qt
+sudo pacman --noconfirm -S texlive-most
+sudo pacman --noconfirm -S docker
+sudo pacman --noconfirm -S rsync
 
 # for kernel compilation
-sudo pacman -S xmlto kmod inetutils bc libelf cpio
-sudo pacman -S debootstrap
+sudo pacman --noconfirm -S xmlto kmod inetutils bc libelf cpio
+sudo pacman --noconfirm -S debootstrap
 
-sudo pacman -S tcpdump
-sudo pacman -S tidy
-sudo pacman -S pandoc
-sudo pacman -S firefox
-sudo pacman -S clang
+sudo pacman --noconfirm -S tcpdump
+sudo pacman --noconfirm -S tidy
+sudo pacman --noconfirm -S pandoc
+sudo pacman --noconfirm -S firefox
+sudo pacman --noconfirm -S clang
 
 # RPM
-sudo pacman -S rpmtools
+sudo pacman --noconfirm -S rpmtools
 
 # Trace tools
-sudo pacman -S strace
-sudo pacman -S ltrace
+sudo pacman --noconfirm -S strace
+sudo pacman --noconfirm -S ltrace
 
 # wine
-sudo pacman -S wine
+sudo pacman --noconfirm -S wine
 
 # vulkan
-sudo pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+sudo pacman --noconfirm -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 
 # ranger
-sudo pacman -S ranger
+sudo pacman --noconfirm -S ranger
 
 # Utils
-sudo pacman -S cpuid
-sudo pacman -S dmidecode
-sudo pacman -S hexdump
-sudo pacman -S net-tools
+sudo pacman --noconfirm -S cpuid
+sudo pacman --noconfirm -S dmidecode
+sudo pacman --noconfirm -S hexdump
+sudo pacman --noconfirm -S net-tools
