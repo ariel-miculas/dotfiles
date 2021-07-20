@@ -9,3 +9,5 @@ alias gcb='git checkout "$(git branch -a | sed "s/  //" | grep -v "^*" | fzf)"'
 alias gct='git checkout "$(git tag | fzf)"'
 alias fda="fd -H -I"
 alias gs="git status"
+alias vi=vim
+alias ghidra="$HOME/work/ghidra/ghidra_9.2.2_PUBLIC/ghidraRun"
