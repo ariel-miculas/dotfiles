@@ -1,8 +1,13 @@
-.PHONY:install all dotfiles
-install:
-	./install.sh
+.PHONY:install all dotfiles default
 
-all: install dotfiles
+default:
+	@echo "Please specify {arch|debian}"
+
+arch:
+	./install/arch/install.sh
+
+debian:
+	./install/debian/install.sh
 
 dotfiles:
 	stow -v -R -t ~ vim bash git tmux input zsh

@@ -2,11 +2,12 @@
 
 ## Prerequisites
 ```
-sudo apt install git
+git
 ```
 
 ## Installation
 ```
 cd dotfiles
-./install.sh
+make arch|debian
+make dotfiles
 ```
