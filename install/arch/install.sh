@@ -26,5 +26,8 @@ vim +PlugInstall +qall
 # install diff-so-fancy
 (cd ~/work && git clone https://github.com/so-fancy/diff-so-fancy.git)
 
+# install zsh + dependencies
+../oh_zsh_install.sh
+
 #forget all the hashed paths
 hash -r

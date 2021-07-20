@@ -39,6 +39,9 @@ sudo apt install -y silversearcher-ag
 # install stow (needed for dotfiles)
 sudo apt install -y stow
 
+# install zsh + dependencies
+./zsh_install.sh
+
 #forget all the hashed paths
 hash -r
 
