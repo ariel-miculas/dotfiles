@@ -252,7 +252,7 @@ let g:grepper.tools = ['ag']
 let g:grepper.open = 0
 let g:grepper.jump = 1
 
-let g:grepper.ag = {'grepprg': 'ag --vimgrep --cc --cpp',
+let g:grepper.ag = {'grepprg': 'ag --vimgrep --cc --cpp --python --shell',
       \ 'grepformat': '%f:%l:%c:%m'}
 
 command! Todo GrepperAg '(TODO|FIXME|XXX)'
