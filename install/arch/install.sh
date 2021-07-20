@@ -29,5 +29,9 @@ vim +PlugInstall +qall
 # install zsh + dependencies
 ../oh_zsh_install.sh
 
+# install virtualenvwrapper
+sudo pacman --noconfirm -S python-pip
+sudo pip3 install virtualenvwrapper
+
 #forget all the hashed paths
 hash -r
