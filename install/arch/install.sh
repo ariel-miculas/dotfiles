@@ -17,6 +17,8 @@ set -e
 # build vim
 ../build-vim.sh
 
+# todo: setup the vimrc via stow
+
 # install the vim plugins
 vim +PlugInstall +qall
 

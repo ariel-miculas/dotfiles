@@ -1,4 +1,8 @@
+## Install keyring
+pacman -S archlinux-keyring
+
 # Dotfiles support
+sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S fd
 sudo pacman --noconfirm -S bat
 sudo pacman --noconfirm -S the_silver_searcher
@@ -20,7 +24,7 @@ popd
 yay -S autojump
 
 # Install development packages
-sudo pacman --noconfirm -S google-chrome
+yay -S google-chrome
 sudo pacman --noconfirm -S ntfs-3g
 sudo pacman --noconfirm -S linux-headers
 sudo pacman --noconfirm -S virtualbox virtualbox-guest-iso
