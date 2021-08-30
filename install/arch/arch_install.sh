@@ -79,9 +79,6 @@ sudo pacman --noconfirm -S rpmtools
 sudo pacman --noconfirm -S strace
 sudo pacman --noconfirm -S ltrace
 
-# wine
-sudo pacman --noconfirm -S wine
-
 # vulkan
 sudo pacman --noconfirm -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 
