@@ -101,3 +101,4 @@ yay -S teams
 yay -S zoom
 yay -S google-chrome
 yay -S openoffice-bin
+yay -S xclip
