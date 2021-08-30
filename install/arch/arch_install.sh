@@ -90,3 +90,11 @@ sudo pacman --noconfirm -S cpuid
 sudo pacman --noconfirm -S dmidecode
 sudo pacman --noconfirm -S hexdump
 sudo pacman --noconfirm -S net-tools
+sudo pacman --noconfirm -S dnsutils
+sudo pacman --noconfirm -S tldr
+sudo pacman --noconfirm -S iputils
+sudo pacman --noconfirm -S traceroute
+sudo pacman --noconfirm -S p7zip
+sudo pacman --noconfirm -S htop
+sudo pacman --noconfirm -S nmap
+sudo pacman --noconfirm -S baobab
