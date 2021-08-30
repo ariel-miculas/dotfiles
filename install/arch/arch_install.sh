@@ -20,11 +20,7 @@ cd yay
 makepkg -si
 popd
 
-## Install autojump
-yay -S autojump
-
 # Install development packages
-yay -S google-chrome
 sudo pacman --noconfirm -S ntfs-3g
 sudo pacman --noconfirm -S linux-headers
 sudo pacman --noconfirm -S virtualbox virtualbox-guest-iso
@@ -98,3 +94,10 @@ sudo pacman --noconfirm -S p7zip
 sudo pacman --noconfirm -S htop
 sudo pacman --noconfirm -S nmap
 sudo pacman --noconfirm -S baobab
+
+# yay packages
+yay -S autojump
+yay -S teams
+yay -S zoom
+yay -S google-chrome
+yay -S openoffice-bin
