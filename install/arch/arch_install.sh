@@ -94,11 +94,11 @@ sudo pacman --noconfirm -S p7zip
 sudo pacman --noconfirm -S htop
 sudo pacman --noconfirm -S nmap
 sudo pacman --noconfirm -S baobab
+sudo pacman --noconfirm -S libreoffice-still
 
 # yay packages
 yay -S autojump
 yay -S teams
 yay -S zoom
 yay -S google-chrome
-yay -S openoffice-bin
 yay -S xclip
