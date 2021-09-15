@@ -167,10 +167,16 @@ set noswapfile
 " Automatic reload of files from disk
 set autoread
 
-" tell it to use an undo file
-set undofile
-" set a directory to store the undo history
-set undodir=~/.vim/undo/
+if has('persistent_undo')
+  " tell it to use an undo file
+  if isdirectory($HOME.'/.vim/undo')
+    " set a directory to store the undo history
+    set undofile
+    set undodir=~/.vim/undo/
+  else
+    echoerr "~/.vim/undo doesn't exist!"
+  endif
+endif
 
 let $BASH_ENV = "~/.bash_aliases"
 
