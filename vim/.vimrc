@@ -110,15 +110,17 @@ nmap <silent> <c-c> :nohlsearch<CR>
 noremap  <F4> :set cursorline! cursorcolumn!<CR>
 inoremap <F4> <ESC>:set cursorline! cursorcolumn!<CR>i
 
-let g:grayoutEnabled=0
 function! GrayoutToggle()
-    if g:grayoutEnabled
+    if !exists("b:grayoutEnabled")
+      let b:grayoutEnabled=0
+    endi
+    if b:grayoutEnabled
         exec 'GrayoutClear'
-        let g:grayoutEnabled=0
+        let b:grayoutEnabled=0
         echo 'Grayout disabled'
     else
         exec 'GrayoutUpdate'
-        let g:grayoutEnabled=1
+        let b:grayoutEnabled=1
         echo 'Grayout enabled'
     endif
 endfunction
