@@ -110,6 +110,9 @@ nmap <silent> <c-c> :nohlsearch<CR>
 noremap  <F4> :set cursorline! cursorcolumn!<CR>
 inoremap <F4> <ESC>:set cursorline! cursorcolumn!<CR>i
 
+" Toggle last buffers with backspace
+nnoremap <Backspace> <C-^>
+
 function! GrayoutToggle()
     if !exists("b:grayoutEnabled")
       let b:grayoutEnabled=0
