@@ -128,7 +128,7 @@ function! GrayoutToggle()
     endif
 endfunction
 
-nnoremap <F5> :call GrayoutToggle()<cr>
+nnoremap yog :call GrayoutToggle()<cr>
 
 function! TabToggle()
     if &expandtab
@@ -426,9 +426,11 @@ function! s:goyo_leave()
   set showcmd
   set scrolloff=1
   Limelight!
+  " Fix grayout highlighting
+  highlight link PreprocessorGrayout Comment
 endfunction
 
-nnoremap yog :Goyo<cr>
+nnoremap yoy :Goyo<cr>
 
 " Break habit of using arrow keys
 noremap <Up> <NOP>
