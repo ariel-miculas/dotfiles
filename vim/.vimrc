@@ -133,6 +133,8 @@ function! TabToggle()
     endif
 endfunction
 
+nmap <F9> :call TabToggle()<cr>
+
 function! LoadCscope()
     let db = findfile("cscope.out", ".;")
     if (!empty(db))
@@ -146,8 +148,6 @@ function! LoadCscope()
     endif
 endfunction
 
-
-nmap <F9> :call TabToggle()<cr>
 
 set cindent
 set cinoptions+=g0
