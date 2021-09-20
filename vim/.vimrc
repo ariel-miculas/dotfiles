@@ -95,7 +95,7 @@ augroup vimrc
     autocmd! User GoyoEnter nested call <SID>goyo_enter()
     autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-    autocmd BufEnter /* call LoadCscope()
+    autocmd FileType c,cpp call LoadCscope()
 augroup END
 
 " Show trailing whitespace:
