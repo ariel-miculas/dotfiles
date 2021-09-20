@@ -36,6 +36,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'andymass/vim-matchup'
 Plug 'kana/vim-textobj-user'
 Plug 'AndrewRadev/sideways.vim'
+Plug 'mphe/grayout.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -108,6 +109,21 @@ nmap <silent> <c-c> :nohlsearch<CR>
 
 noremap  <F4> :set cursorline! cursorcolumn!<CR>
 inoremap <F4> <ESC>:set cursorline! cursorcolumn!<CR>i
+
+let g:grayoutEnabled=0
+function! GrayoutToggle()
+    if g:grayoutEnabled
+        exec 'GrayoutClear'
+        let g:grayoutEnabled=0
+        echo 'Grayout disabled'
+    else
+        exec 'GrayoutUpdate'
+        let g:grayoutEnabled=1
+        echo 'Grayout enabled'
+    endif
+endfunction
+
+nnoremap <F5> :call GrayoutToggle()<cr>
 
 function! TabToggle()
     if &expandtab
