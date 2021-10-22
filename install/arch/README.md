@@ -73,7 +73,7 @@ EOF
 ```
 
 ```
-echo archlinux /etc/hostname
+echo archlinux > /etc/hostname
 ```
 
 ```
