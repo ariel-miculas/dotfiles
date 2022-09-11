@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/bin"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
 PATH="$PATH:$HOME/.bin"
 PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-linux"
 PATH="$PATH:/usr/local/i386elfgcc/bin"
