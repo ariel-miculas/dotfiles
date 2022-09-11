@@ -347,8 +347,8 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
 \   'perl': ['perl'],
 \   'asm': [],
-\   'c': ['gcc'],
-\   'cpp': ['gcc'],
+\   'c': ['cppcheck', 'clangcheck'],
+\   'cpp': ['cppcheck', 'clangcheck'],
 \}
 
 " Tabularize shortcuts
