@@ -23,5 +23,6 @@ make distclean
             --prefix=/usr/local
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
 sudo make install
+mkdir -p ~/.vim/undo
 
 cd $curr_dir
