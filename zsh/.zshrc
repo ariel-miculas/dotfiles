@@ -15,8 +15,9 @@ PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/work/diff-so-fancy"
 PATH="$PATH:/usr/lib/jvm/java-11-openjdk/bin"
 
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 export DEFAULT_USER="$(whoami)"
 # Path to your oh-my-zsh installation.
