@@ -14,6 +14,8 @@ PATH="$PATH:$HOME/work/ghidra/jdk-11.0.8+10/bin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/work/diff-so-fancy"
 PATH="$PATH:/usr/lib/jvm/java-11-openjdk/bin"
+PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:/usr/local/go/bin"
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=~/.virtualenvs
