@@ -30,10 +30,10 @@ vim +PlugInstall +qall
 
 # FIXME oh_zsh_install.sh must be run from zsh shell, not bash
 # install zsh + dependencies
-# ../oh_zsh_install.sh
+../oh_zsh_install.sh
 
 # make zsh the default shell
-# chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 # install virtualenvwrapper
 sudo pacman --noconfirm -S python-pip
