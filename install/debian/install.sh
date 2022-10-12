@@ -33,9 +33,6 @@ vim +PlugInstall +qall
 # install autojump
 sudo apt install -y autojump
 
-# install ag
-sudo apt install -y silversearcher-ag
-
 # install stow (needed for dotfiles)
 sudo apt install -y stow
 

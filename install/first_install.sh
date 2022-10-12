@@ -22,7 +22,6 @@ sudo apt install exuberant-ctags
 sudo apt install tmux
 sudo apt install xclip
 sudo apt install tldr
-sudo apt install silversearcher-ag
 sudo apt install autojump
 sudo apt install htop
 sudo gem install terjira

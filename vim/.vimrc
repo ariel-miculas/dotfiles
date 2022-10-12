@@ -255,8 +255,8 @@ nnoremap Y y$
 " Convert each NameLikeThis to name_like_this in current line.
 " :s#\(\<\u\l\+\|\l\+\)\(\u\)#\l\1_\l\2#g
 
-set grepprg=ag\ --vimgrep\ $*
-set grepformat=%f:%l:%c:%m
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set grepformat=%f:%l:%c:%m,%f:%l:%m
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<c-u>
@@ -275,14 +275,14 @@ nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
 let g:grepper = {}
-let g:grepper.tools = ['ag']
+let g:grepper.tools = ['rg']
 let g:grepper.open = 0
 let g:grepper.jump = 1
 
-let g:grepper.ag = {'grepprg': 'ag --vimgrep --cc --cpp --python --shell',
-      \ 'grepformat': '%f:%l:%c:%m'}
+let g:grepper.rg = {'grepprg': 'rg --vimgrep --no-heading --smart-case -tc -tcpp -tpy -tsh -trust',
+      \ 'grepformat': '%f:%l:%c:%m,%f:%l:%m'}
 
-command! Todo GrepperAg '(TODO|FIXME|XXX)'
+command! Todo GrepperRg '(TODO|FIXME|XXX)'
 
 " Add a shortcut for grepping the current word
 nnoremap <leader>* :Grepper -noprompt -query -w <c-r><c-w><cr>
@@ -397,7 +397,7 @@ nnoremap <silent> <leader>] :Tags<cr>
 nnoremap <silent> <leader>c :BCommits<cr>
 nnoremap <silent> <leader>C :Commits<cr>
 nnoremap <silent> <leader>h :History<cr>
-nnoremap <silent> <leader>a :Ag<space>
+nnoremap <silent> <leader>a :Rg<space>
 
 " Preview window on the right side of the window,
 " hidden by default, ctrl-/ to toggle

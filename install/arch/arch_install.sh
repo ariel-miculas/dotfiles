@@ -5,7 +5,6 @@ pacman -S archlinux-keyring
 sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S fd
 sudo pacman --noconfirm -S bat
-sudo pacman --noconfirm -S the_silver_searcher
 sudo pacman --noconfirm -S zsh
 sudo pacman --noconfirm -S tmux
 sudo pacman --noconfirm -S cmake
@@ -102,3 +101,10 @@ yay -S teams
 yay -S zoom
 yay -S google-chrome
 yay -S xclip
+yay -S rustup
+
+# Rust
+rustup default stable
+
+# rg
+cargo install ripgrep
