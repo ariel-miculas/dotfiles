@@ -9,7 +9,7 @@ cd ~/work
 # clone the vim repo
 (cd vim && git fetch) || (git clone https://github.com/vim/vim.git)
 cd vim
-git checkout v8.2.3187
+git checkout v9.0.1218
 make distclean
 ./configure --with-features=huge \
             --enable-multibyte \
@@ -21,7 +21,7 @@ make distclean
             --with-x \
             --enable-cscope \
             --prefix=/usr/local
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim82
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim90
 sudo make install
 mkdir -p ~/.vim/undo
 
