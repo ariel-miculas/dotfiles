@@ -100,7 +100,6 @@ plugins=(
   fzf
   encode64
   fd
-  alias-tips
   dircycle
   zsh-syntax-highlighting
   ranger-autojump
