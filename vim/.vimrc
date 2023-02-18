@@ -37,6 +37,7 @@ Plug 'andymass/vim-matchup'
 Plug 'kana/vim-textobj-user'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'mphe/grayout.vim'
+Plug 'rust-lang/rust.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -279,7 +280,7 @@ let g:grepper.tools = ['rg']
 let g:grepper.open = 0
 let g:grepper.jump = 1
 
-let g:grepper.rg = {'grepprg': 'rg --vimgrep --no-heading --smart-case -tc -tcpp -tpy -tsh -trust',
+let g:grepper.rg = {'grepprg': 'rg --vimgrep --no-heading --smart-case -tc -tcpp -tpy -tsh -trust -ttoml',
       \ 'grepformat': '%f:%l:%c:%m,%f:%l:%m'}
 
 command! Todo GrepperRg '(TODO|FIXME|XXX)'
