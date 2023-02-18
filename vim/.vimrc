@@ -153,6 +153,19 @@ function! LoadCscope()
     endif
 endfunction
 
+function! GoFmt()
+  let saved_view = winsaveview()
+  silent %!gofmt
+  if v:shell_error > 0
+    cexpr getline(1, '$')->map({ idx, val -> val->substitute('<standard input>', expand('%'), '') })
+    silent undo
+    cwindow
+  endif
+  call winrestview(saved_view)
+endfunction
+
+command! GoFmt call GoFmt()
+
 
 set cindent
 set cinoptions+=g0
@@ -279,7 +292,7 @@ let g:grepper.tools = ['rg']
 let g:grepper.open = 0
 let g:grepper.jump = 1
 
-let g:grepper.rg = {'grepprg': 'rg --vimgrep --no-heading --smart-case -tc -tcpp -tpy -tsh -trust -ttoml',
+let g:grepper.rg = {'grepprg': 'rg --vimgrep --no-heading --smart-case -tc -tcpp -tpy -tsh -trust -ttoml -tgo',
       \ 'grepformat': '%f:%l:%c:%m,%f:%l:%m'}
 
 command! Todo GrepperRg '(TODO|FIXME|XXX)'
