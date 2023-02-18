@@ -21,7 +21,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'Valloric/YouCompleteMe'
-Plug 'godlygeek/tabular'
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
@@ -351,22 +350,6 @@ let g:ale_linters = {
 \   'c': ['cppcheck', 'clangcheck'],
 \   'cpp': ['cppcheck', 'clangcheck'],
 \}
-
-" Tabularize shortcuts
-" lowercase t for aligning only at the first occurence
-" UPPERCASE T for aligning at all the occurences
-nnoremap <leader>t, :Tabularize /^[^,]*,\zs<cr>
-nnoremap <leader>T, :Tabularize /,\zs<cr>
-
-nnoremap <leader>t: :Tabularize /^[^:]*:\zs<cr>
-nnoremap <leader>T: :Tabularize /:\zs<cr>
-
-nnoremap <leader>t= :Tabularize /^[^=]*\zs=<cr>
-nnoremap <leader>T= :Tabularize /=<cr>
-
-" for assembly alignment
-nnoremap <leader>t<space> :Tabularize /\v^\s+\S+\zs/l0l4<cr>
-nnoremap <leader>T<space> :Tabularize /\v\s+\S+\zs/l0l4<cr>
 
 " YCM shortcuts
 nnoremap gd :YcmCompleter GoTo<CR>
