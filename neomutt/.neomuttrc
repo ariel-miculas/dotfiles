@@ -1,0 +1,43 @@
+# Configure mutt to read from the lei maildir inbox
+set mbox_type=Maildir
+set folder="~/Mail/kernel"
+set mbox="~/Mail/kernel"
+set record="+.Sent"
+set postponed="+.Drafts"
+set spoolfile="~/Mail/kernel"
+
+source vim-keys.rc
+
+# Recently active thread/subthread first
+# set use_threads=threads sort=reverse-last-date sort_aux=reverse-last-date
+
+# Flat view sorted by date, oldest first
+# set use_threads=no sort=date sort_aux=date
+
+# Flat view sorted by date, neweest mail first
+set use_threads=no sort=reverse-last-date sort_aux=reverse-last-date
+
+set collapse_unread="yes"
+# Show date in year/month/day hour:minute format
+set date_format="%y/%m/%d %I:%M%p"
+
+# Lets me collapse fucking everything
+bind index = collapse-all
+bind index - collapse-thread
+
+# Show Message-Id in the window
+unignore Message-Id:
+
+# Use msmtp to send email
+set sendmail = "/usr/bin/msmtp"
+set realname = "Ariel Miculas"
+set from = "amiculas@cisco.com"
+set use_from = "yes"
+set envelope_from = "yes"
+# set smtp_url="smtp://amiculas\@cisco.com@localhost:1025"
+
+# Use vim as my editor
+set editor = "vim"
+
+# Show the headers in the compose view
+set edit_headers = "yes"

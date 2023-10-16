@@ -15,4 +15,4 @@ debian:
 	cd install/debian && ./install.sh
 
 dotfiles:
-	stow -v -R -t ~ vim git tmux input zsh
+	stow -v -R -t ~ vim git tmux input zsh neomutt
