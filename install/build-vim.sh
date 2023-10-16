@@ -9,7 +9,7 @@ cd ~/work
 # clone the vim repo
 (cd vim && git fetch) || (git clone https://github.com/vim/vim.git)
 cd vim
-git checkout v9.0.1218
+git checkout v9.0.2034
 make distclean
 ./configure --with-features=huge \
             --enable-multibyte \
