@@ -44,6 +44,19 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
+    ".zshrc".source = ../zsh/.zshrc;
+    ".zsh_aliases".source = ../zsh/.zsh_aliases;
+    ".p10k.zsh".source = ../zsh/.p10k.zsh;
+
+    ".vimrc".source = ../vim/.vimrc;
+    ".gitconfig".source = ../git/.gitconfig;
+    ".tmux.conf".source = ../tmux/.tmux.conf;
+    ".inputrc".source = ../input/.inputrc;
+    ".msmtprc".source = ../msmtp/.msmtprc;
+
+    ".neomuttrc".source = ../neomutt/.neomuttrc;
+    "vim-keys.rc".source = ../neomutt/vim-keys.rc;
+
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
