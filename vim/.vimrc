@@ -37,6 +37,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'mphe/grayout.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'LnL7/vim-nix'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
