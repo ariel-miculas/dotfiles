@@ -38,6 +38,7 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'mphe/grayout.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'LnL7/vim-nix'
+Plug 'fatih/vim-go'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -45,6 +46,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-abolish'
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -337,6 +339,38 @@ set diffopt+=vertical
 " tagbar
 nnoremap <silent> <leader><space> :TagbarToggle<cr>
 
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
+" vim-go
+let g:go_def_mapping_enabled = 0
+
+
 " tmux
 let g:tmux_navigator_no_mappings = 1
 
@@ -353,11 +387,25 @@ let g:VimuxHeight = "30"
 nnoremap <silent> <leader>r :VimuxPromptCommand<cr>
 nnoremap <silent> <leader>rr :VimuxRunLastCommand<cr>
 
+" vim-rest-console (vrc)
+let g:vrc_trigger = 'gx'
+let g:vrc_response_default_content_type = 'application/json'
+let g:vrc_auto_format_response_patterns = {
+\ 'json': 'python3 -m json.tool',
+\ 'xml': 'xmllint --format -',
+\}
+let g:vrc_debug = 0
+let g:vrc_show_command = 0
+let g:vrc_curl_opts = {
+  \ '--no-progress-meter' : '',
+\}
+
 " ALE
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
+" let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'perl': ['perl'],
 \   'asm': [],
@@ -378,6 +426,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_auto_hover=''
 let g:ycm_clangd_args = ['-log=verbose', '-pretty']
+" let g:ycm_rust_toolchain_root = $HOME . '/.cargo'
+
 
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 " let g:ycm_clangd_binary_path = 'clangd'
@@ -404,6 +454,7 @@ let g:fzf_preview_window = ['right:hidden', 'ctrl-/']
 " Vimwiki
 nmap <F13> <Plug>VimwikiNextLink
 nmap <F14> <Plug>VimwikiPrevLink
+let g:vimwiki_key_mappings = { 'table_mappings': 0 }
 
 function! s:goyo_enter()
   if executable('tmux') && strlen($TMUX)

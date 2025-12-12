@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@24"
 PATH="$PATH:$HOME/.bin"
 PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-linux"
 PATH="$PATH:/usr/local/i386elfgcc/bin"
@@ -15,21 +15,30 @@ PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/work/diff-so-fancy"
 PATH="$PATH:/usr/lib/jvm/java-11-openjdk/bin"
 PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/go/bin"
 PATH="$PATH:/usr/local/go/bin"
+PATH="$PATH:/opt/homebrew/bin"
+PATH="$PATH:/opt/homebrew/opt/node@22/bin"
 
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=~/.virtualenvs
-source $HOME/.local/bin/virtualenvwrapper.sh
+# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# export WORKON_HOME=~/.virtualenvs
+# source $HOME/.local/bin/virtualenvwrapper.sh
 
 export DEFAULT_USER="$(whoami)"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export GOBIN=${GOBIN:-$(go env GOPATH)/bin}
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+if [[ -n $CURSOR_TRACE_ID ]]; then
+  ZSH_THEME="robbyrussell"  # Use a simpler theme in Cursor
+else
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -99,7 +108,6 @@ plugins=(
   vi-mode
   fzf
   encode64
-  fd
   dircycle
   zsh-syntax-highlighting
   ranger-autojump
@@ -133,6 +141,15 @@ bindkey '^[[1;2C' insert-cycledright
 # export ARCHFLAGS="-arch x86_64"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ ! -n $CURSOR_TRACE_ID ]]; then
+  [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# MACOS
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+source <(kubectl completion zsh)
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+ulimit -n 10240
